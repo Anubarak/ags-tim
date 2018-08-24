@@ -1,4 +1,4 @@
 ﻿Zum Proxy Einschalten:
 git_config_--global_http-proxy http://ags-pi:raspberry@10.0.0.5:8080
 Zum Proxy Ausschalten:
-Robin oder Internet fragen
+Robin oder Internet    fragen   
