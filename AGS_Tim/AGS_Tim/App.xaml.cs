@@ -13,5 +13,11 @@ namespace AGS_Tim
     /// </summary>
     public partial class App : Application
     {
+
+        private void StartUp(object sender, StartupEventArgs e)
+        {
+
+        }
+
     }
 }
