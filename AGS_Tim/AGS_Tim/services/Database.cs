@@ -5,46 +5,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using System.Data.SQLite;
+using SQLite;
 
 
 
 namespace AGS_Tim.services
 {
-    class Database
+    public class Database
     {
-        private SQLiteConnection dbConnection;  
-        public  Database() {
-          dbConnection = new SQLiteConnection("Data Source=TIM.db;Version=3;"); 
-        }
-
-        public void OpenDatabase()
+       public  Database()
         {
-            try
+            var databasePath = Path.Combine(Environment.CurrentDirectory, "TIM.db");
+            var db = new SQLiteConnection(databasePath);
+
+            var s = db.Insert(new QuestionType()
             {
-                dbConnection.Open();
-            }
-            catch (Exception ex)
-            {
-            }
+                name = "Test"
+            });
 
         }
+    }
 
 
-        public int Execute()
-        {
-            try
-            {
-           
-            }
-            catch (Exception ex)
-            {
 
-            }
-
-            return 0;
-        }
-
-        
+    public class QuestionType
+    {
+        [PrimaryKey, AutoIncrement]
+        public int id { get; set; }
+        public string name { get; set; }
     }
 }
+
