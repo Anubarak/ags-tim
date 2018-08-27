@@ -87,8 +87,8 @@
     <Compile Include="services\Database.cs" />
     <Compile Include="services\Highscores.cs" />
     <Compile Include="services\Questions.cs" />
-    <Compile Include="SQLite.cs" />
-    <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="services\SQLite.cs" />
+    <Compile Include="services\SQLiteAsync.cs" />
     <Compile Include="windows\Game.xaml.cs">
       <DependentUpon>Game.xaml</DependentUpon>
     </Compile>
