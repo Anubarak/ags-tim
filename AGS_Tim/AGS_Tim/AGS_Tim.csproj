@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -56,7 +59,10 @@
     </ApplicationDefinition>
     <Compile Include="controllers\InputController.cs" />
     <Compile Include="models\GameSession.cs" />
+    <Compile Include="models\Player.cs" />
     <Compile Include="services\Database.cs" />
+    <Compile Include="services\Highscores.cs" />
+    <Compile Include="services\Questions.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
