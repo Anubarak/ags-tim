@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AGS_Tim.controllers
 {
-    interface InputController
+    class Numpad
     {
     }
 }

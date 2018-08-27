@@ -54,7 +54,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="controllers\HopscotchMat.cs" />
     <Compile Include="controllers\InputController.cs" />
+    <Compile Include="controllers\Numpad.cs" />
     <Compile Include="models\GameSession.cs" />
     <Compile Include="services\Database.cs" />
     <Page Include="MainWindow.xaml">
