@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace AGS_Tim.controllers
 {
-    interface InputController
+    public interface InputController
     {
+        bool Available { get; set; }
+
+        event EventHandler<InputController> Disconnected;
+
+        event EventHandler<int> ButtonPressed;
     }
 }
