@@ -1,6 +1,4 @@
-﻿using SqlKata;
-using SqlKata.Execution;
-using SqlKata.Compilers;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -16,9 +14,7 @@ namespace AGS_Tim.services
     {
         public  Database() {
 
-            var connection = new SqlConnection(Path.Combine(Environment.CurrentDirectory, "TIM.db"));
-            var compiler = new MySqlCompiler();
-            var db = new QueryFactory(connection, compiler);
+       
            
         }
 

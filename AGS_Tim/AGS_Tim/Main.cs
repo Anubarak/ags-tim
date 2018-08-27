@@ -14,7 +14,7 @@ namespace AGS_Tim
         public static Highscores highscores;
         public static Questions questions;
 
-        static void init()
+       public  static void init()
         {
             db = new Database();
             highscores = new Highscores();
