@@ -37,8 +37,14 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="QueryBuilder, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SqlKata.1.0.4\lib\net45\QueryBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlKata.Execution, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlKata.Execution.1.0.4\lib\net451\SqlKata.Execution.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
