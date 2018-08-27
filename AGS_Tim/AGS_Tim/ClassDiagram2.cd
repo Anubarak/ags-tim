@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AGS_Tim.Main">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAABAAAAAQAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Main.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Field Name="highscores" />
+      <Field Name="questions" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AGS_Tim.services.Database" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>services\Database.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AGS_Tim.services.Highscores" Collapsed="true">
+    <Position X="4.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>services\Highscores.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AGS_Tim.services.Questions" Collapsed="true">
+    <Position X="2.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>services\Questions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
