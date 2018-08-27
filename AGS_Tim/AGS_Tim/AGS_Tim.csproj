@@ -62,7 +62,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DatabaseContollers.cs" />
+    <Compile Include="controllers\DatabaseContollers.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -98,7 +98,6 @@
     <Resource Include="Git_Settings_AGS.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="controllers\" />
     <Folder Include="windows\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
