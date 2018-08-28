@@ -30,5 +30,24 @@ namespace AGS_Tim.windows
         {
             Main.mainWindow.Content = new NameEntry();
         }
+
+        public void ButtonPressed(int ButtonNumber)
+        {
+            switch (ButtonNumber)
+            {
+                case 1:
+                    Main.mainWindow.Content = Main.mainWindow.GetNameEntry();
+                    break;
+                case 2:
+                    Main.mainWindow.Content = Main.mainWindow.GetHighscore();
+                    break;
+                case 3:
+                    
+                    break;
+                case 4:
+
+                    break;
+            }
+        }
     }
 }

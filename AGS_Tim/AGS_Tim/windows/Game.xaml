@@ -25,9 +25,13 @@
             Content="TIM-Arbeit">
         </Label>
 
-        <Border Grid.Row="2"
+        <Border
+            Grid.Row="2"
             BorderBrush="RoyalBlue"
             BorderThickness="2">
+            <Image
+                Stretch="None">
+            </Image>
         </Border>
 
         <Image

@@ -28,6 +28,9 @@
         <Border Grid.Row="2"
             BorderBrush="RoyalBlue"
             BorderThickness="2">
+            <Image
+                Stretch="None">
+            </Image>
         </Border>
 
         <Label    

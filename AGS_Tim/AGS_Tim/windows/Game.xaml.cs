@@ -24,5 +24,10 @@ namespace AGS_Tim.windows
         {
             InitializeComponent();
         }
+
+        public void ButtonPressed(int ButtonNumber)
+        {
+
+        }
     }
 }

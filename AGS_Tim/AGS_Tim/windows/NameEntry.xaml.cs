@@ -24,5 +24,17 @@ namespace AGS_Tim.windows
         {
             InitializeComponent();
         }
+
+        public void ButtonPressed(int ButtonNumber)
+        {
+            if (ButtonNumber == 1)
+            {
+                Main.mainWindow.Content = Main.mainWindow.GetGame();
+            }
+            else
+            {
+
+            }
+        }
     }
 }

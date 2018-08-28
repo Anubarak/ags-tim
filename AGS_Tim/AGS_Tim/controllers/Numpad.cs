@@ -17,47 +17,6 @@ namespace AGS_Tim.controllers
             mainWindow.KeyDown += MainWindow_KeyDown;
         }
 
-        /// <summary> Behandelt das Drücken einer Tastaturtaste, wenn das MainWindow im Fokus ist </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MainWindow_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
-        {
-            int numberPressed = 0;
-            switch (e.Key)
-            {
-                case System.Windows.Input.Key.D1:
-                    numberPressed = 1;
-                    break;
-                case System.Windows.Input.Key.D2:
-                    numberPressed = 2;
-                    break;
-                case System.Windows.Input.Key.D3:
-                    numberPressed = 3;
-                    break;
-                case System.Windows.Input.Key.D4:
-                    numberPressed = 4;
-                    break;
-                case System.Windows.Input.Key.D5:
-                    numberPressed = 5;
-                    break;
-                case System.Windows.Input.Key.D6:
-                    numberPressed = 6;
-                    break;
-                case System.Windows.Input.Key.D7:
-                    numberPressed = 7;
-                    break;
-                case System.Windows.Input.Key.D8:
-                    numberPressed = 8;
-                    break;
-                case System.Windows.Input.Key.D9:
-                    numberPressed = 9;
-                    break;
-            }
-
-            if (numberPressed != 0 && ButtonPressed != null)
-                ButtonPressed(this, numberPressed);
-        }
-
         /// <summary> Behandelt das Drücken einer Taste </summary>
         public event EventHandler<int> ButtonPressed;
 
@@ -66,6 +25,16 @@ namespace AGS_Tim.controllers
 
         /// <summary> Event welches beim Disconnect der Harware feuert </summary>
         public event EventHandler<EHWInput> Disconnected;
+
+        /// <summary> Unsubscribes all handler on the <see cref="ButtonPressed"/> event and returns them. </summary>
+        /// <returns></returns>
+        public Delegate[] GetButtonPressedMethodsAndUnsubscribe()
+        {
+            Delegate[] delegates = ButtonPressed.GetInvocationList();
+            foreach (Delegate del in delegates)
+                ButtonPressed -= (del as EventHandler<int>);
+            return delegates;
+        }
 
         /// <summary> Gibt an ob die Hardware verfügbar ist </summary>
         public bool Available
@@ -81,6 +50,9 @@ namespace AGS_Tim.controllers
                 return false;
             }
         }
+
+        /// <summary> Type of the InputController </summary>
+        public EHWInput hWInputType => EHWInput.Keyboard;
 
         /// <summary> Methode für Threadaufruf. Prüft alle 5 Sekunden ob die Hardwarekomponente verfügbar ist </summary>
         private void checkAvailability()
@@ -98,6 +70,55 @@ namespace AGS_Tim.controllers
                 oldAvailable = Available;
                 Thread.Sleep(5000);
             }
+        }
+
+        /// <summary> Behandelt das Drücken einer Tastaturtaste, wenn das MainWindow im Fokus ist </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainWindow_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            int numberPressed = 0;
+            switch (e.Key)
+            {
+                case System.Windows.Input.Key.NumPad1:
+                    numberPressed = 1;
+                    break;
+
+                case System.Windows.Input.Key.NumPad2:
+                    numberPressed = 2;
+                    break;
+
+                case System.Windows.Input.Key.NumPad3:
+                    numberPressed = 3;
+                    break;
+
+                case System.Windows.Input.Key.NumPad4:
+                    numberPressed = 4;
+                    break;
+
+                case System.Windows.Input.Key.NumPad5:
+                    numberPressed = 5;
+                    break;
+
+                case System.Windows.Input.Key.NumPad6:
+                    numberPressed = 6;
+                    break;
+
+                case System.Windows.Input.Key.NumPad7:
+                    numberPressed = 7;
+                    break;
+
+                case System.Windows.Input.Key.NumPad8:
+                    numberPressed = 8;
+                    break;
+
+                case System.Windows.Input.Key.NumPad9:
+                    numberPressed = 9;
+                    break;
+            }
+
+            if (numberPressed != 0 && ButtonPressed != null)
+                ButtonPressed(this, numberPressed);
         }
 
         private Thread availabilityThread;
