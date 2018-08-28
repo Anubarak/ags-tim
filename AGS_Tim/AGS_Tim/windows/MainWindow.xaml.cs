@@ -79,15 +79,15 @@ namespace AGS_Tim.windows
             }
             else if (this.Content.GetType() == typeof(NameEntry))
             {
-
+                this.nameEntry.ButtonPressed(ButtonNumber);
             }
             else if (this.Content.GetType() == typeof(Game))
             {
-
+                this.game.ButtonPressed(ButtonNumber);
             }
             else if (this.Content.GetType() == typeof(Highscore))
             {
-
+                this.highscore.ButtonPressed(ButtonNumber);
             }
             else
             {

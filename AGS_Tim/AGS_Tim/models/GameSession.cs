@@ -8,18 +8,29 @@ namespace AGS_Tim.models
 {
    public class GameSession
     {
-        public List<int> answeredQuestions;
+
         public List<int> playersCompleted;
         public DateTime startTime;
         public DateTime endTime;
         public int inputType;  
 
-        public Player[] players = new Player[5];
+        public Player[] players = new Player[6];
 
         public GameSession()
         {
-            for(int i = 0; i == 5; i++)
+            Random rnd = new Random();
+            List<int> usedPlayerIds = new List<int>();
+
+
+       
+            for (int i = 0; i  <6; i++)
             {
+                int tempPlayerId;
+
+                players[i] = new Player(); 
+                players[i].GetSubject();
+                players[i].GetQuestion();  
+
 
             }
 

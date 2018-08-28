@@ -4,15 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AGS_Tim.models;
-using SQLite; 
+using SQLite;
+using AGS_Tim.helpers;
 
 
 namespace AGS_Tim.services
 {
     class Questions
     {
+
+        List<int> questionIds = new List<int>();
+
         /// <summary>
-        /// Returns a random question according to subject, if all questions have been asked it returns the First Question in the database
+        /// Returns a random question according to subject
         /// </summary>
         /// <param name="Subject"> Subject ID</param>
         /// <returns>Random Question</returns>
@@ -26,23 +30,25 @@ namespace AGS_Tim.services
             //table with all Questions of the subject
             var tempQuestions =  Main.db.dbConnection.Table<Question>().Where(v => v.subjectId.Equals(Subject));
 
-            //search for Question that hasn't been asked yet
-            do
+         if (questionIds.Count <= 0)
             {
-                randomQuestionId = rnd.Next(1, tempQuestions.Count());
-                questionCounter++;  
-            } while (Main.gameSession.answeredQuestions.Contains(randomQuestionId) && questionCounter < tempQuestions.Count());
-
-
-            // returns the Question
-            foreach (var question in tempQuestions)
-            {
-               if((question.id == randomQuestionId)) {
-                   return  newQuestion = question; 
+                foreach (var question in tempQuestions)
+                {
+                    questionIds.Add(question.id);
                 }
+                questionIds.Shuffle();
             }
-            
-            return tempQuestions.First( v => v.id.Equals(1));   
+
+         
+            if(questionIds.Count <= 0 )
+            {
+                return null; 
+            }
+
+            int temp = questionIds[0];
+            questionIds.RemoveAt(0);
+
+            return tempQuestions.First( v => v.id.Equals(temp));   
         }
     }
     

@@ -17,10 +17,24 @@ namespace AGS_Tim.models
         public string Name; 
 
 
-
-        public Question GetQuestion() {
-           return  Main.questions.GetNewQuestion(Subject.id);
+        /// <summary>
+        /// Sets a new random Question according to the set subject
+        /// </summary>
+       public void GetQuestion() {
+          Question =  Main.questions.GetNewQuestion(Subject.id);
+            if (Question == null)
+            {
+                GetSubject();
+                Main.questions.GetNewQuestion(Subject.id);
+            }
         }
 
+        /// <summary>
+        /// Sets new random question according to subject
+        /// </summary>
+        public void GetSubject()
+        {
+            Subject = Main.subjects.GetNewSubject(); 
+        }
     }
 }

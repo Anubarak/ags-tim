@@ -39,10 +39,10 @@ namespace AGS_Tim.windows
                     Main.mainWindow.Content = Main.mainWindow.GetNameEntry();
                     break;
                 case 2:
-
+                    Main.mainWindow.Content = Main.mainWindow.GetHighscore();
                     break;
                 case 3:
-                    //this.Content = new Settings;
+                    
                     break;
                 case 4:
 
