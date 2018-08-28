@@ -26,6 +26,16 @@ namespace AGS_Tim.controllers
         /// <summary> Event welches beim Disconnect der Harware feuert </summary>
         public event EventHandler<EHWInput> Disconnected;
 
+        /// <summary> Unsubscribes all handler on the <see cref="ButtonPressed"/> event and returns them. </summary>
+        /// <returns></returns>
+        public Delegate[] GetButtonPressedMethodsAndUnsubscribe()
+        {
+            Delegate[] delegates = ButtonPressed.GetInvocationList();
+            foreach (Delegate del in delegates)
+                ButtonPressed -= (del as EventHandler<int>);
+            return delegates;
+        }
+
         /// <summary> Gibt an ob die Hardware verfügbar ist </summary>
         public bool Available
         {
@@ -109,16 +119,6 @@ namespace AGS_Tim.controllers
 
             if (numberPressed != 0 && ButtonPressed != null)
                 ButtonPressed(this, numberPressed);
-        }
-
-        /// <summary> Unsubscribes all handler on the <see cref="ButtonPressed"/> event and returns them. </summary>
-        /// <returns></returns>
-        public Delegate[] GetButtonPressedMethodsAndUnsubscribe()
-        {
-            Delegate[] delegates = ButtonPressed.GetInvocationList();
-            foreach (Delegate del in delegates)
-                ButtonPressed -= (del as EventHandler<int>);
-            return delegates;
         }
 
         private Thread availabilityThread;

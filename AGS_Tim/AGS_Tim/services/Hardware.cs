@@ -1,10 +1,10 @@
 ﻿using AGS_Tim.controllers;
 using AGS_Tim.models;
-using System.Linq;
+using AGS_Tim.windows;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
-using AGS_Tim.windows;
 
 namespace AGS_Tim.services
 {
@@ -23,7 +23,25 @@ namespace AGS_Tim.services
             inputControllers.Add(numpad);
             // HopScotch
 
+            if (availableHWInputs.Count == 0)
+                throw new Exception("No Input Devices found");
+            activeController = inputControllers.Find(x => x.hWInputType == availableHWInputs.Max());
             activeController.ButtonPressed += mainWindow.ButtonPressed;
+        }
+
+        /// <summary> Returns the active Controller </summary>
+        public InputController ActiveController { get => activeController; }
+
+        /// <summary> Controls if the actvive Controller is from the most superior one and changes the Controller if it isn't </summary>
+        private void GetNewActiveController()
+        {
+            EHWInput most = availableHWInputs.Max();
+            if (activeController == null || activeController.hWInputType != most)
+            {
+                InputController old = activeController;
+                activeController = inputControllers.Find(y => y.hWInputType == inputControllers.Max(x => x.hWInputType));
+                reloadController(old);
+            }
         }
 
         /// <summary> Adds the Connected device </summary>
@@ -48,18 +66,6 @@ namespace AGS_Tim.services
                 GetNewActiveController();
         }
 
-        /// <summary> Controls if the actvive Controller is from the most superior one and changes the Controller if it isn't </summary>
-        private void GetNewActiveController()
-        {
-            EHWInput most = availableHWInputs.Max();
-            if (activeController == null || activeController.hWInputType != most)
-            {
-                InputController old = activeController;
-                activeController = inputControllers.Find(y => y.hWInputType == inputControllers.Max(x => x.hWInputType));
-                reloadController(old);
-            }
-        }
-
         /// <summary> Reloads the events from the old to the new Controller </summary>
         /// <param name="old"></param>
         private void reloadController(InputController old)
@@ -68,9 +74,6 @@ namespace AGS_Tim.services
             foreach (Delegate del in delegates)
                 activeController.ButtonPressed += (del as EventHandler<int>);
         }
-
-        /// <summary> Returns the active Controller </summary>
-        public InputController ActiveController { get => activeController; }
 
         private InputController activeController;
         private List<EHWInput> availableHWInputs = new List<EHWInput>();
