@@ -29,7 +29,9 @@
             BorderBrush="RoyalBlue"
             BorderThickness="2">
             <Image
-                Stretch="None">
+                Stretch="None"
+                Source="/AGS_Tim;component/Resources/tafel.jpg"
+                >
             </Image>
         </Border>
     </Grid>
