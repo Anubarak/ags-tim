@@ -36,5 +36,8 @@ namespace AGS_Tim.models
         {
             Subject = Main.subjects.GetNewSubject(); 
         }
+
+
+       
     }
 }
