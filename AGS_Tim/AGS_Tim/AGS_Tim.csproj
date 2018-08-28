@@ -98,7 +98,9 @@
     <Compile Include="controllers\Numpad.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="models\GameSession.cs" />
+    <Compile Include="models\Highscore.cs" />
     <Compile Include="models\Player.cs" />
+    <Compile Include="models\QuestionType.cs" />
     <Compile Include="services\Database.cs" />
     <Compile Include="services\Highscores.cs" />
     <Compile Include="services\Questions.cs" />

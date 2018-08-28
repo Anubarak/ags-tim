@@ -6,8 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using SQLite;
-
-
+using System.Diagnostics;
 
 namespace AGS_Tim.services
 {
@@ -18,13 +17,22 @@ namespace AGS_Tim.services
             var databasePath = Path.Combine(Environment.CurrentDirectory, "TIM.db");
             var db = new SQLiteConnection(databasePath);
 
-            var s = db.Insert(new QuestionType()
-            {
-                name = "Test"
-            });
+            //Test
+
+            //QuestionType Test2 = new QuestionType(){
+            //    name = "Test2"
+            //};
+            
+            //var s = db.Insert(Test2);
+
+            //var TestName = db.Table<QuestionType>();
+
+            //foreach (var name in TestName)
+            //    Debug.WriteLine(name.name);
 
         }
     }
+
 
 
 
