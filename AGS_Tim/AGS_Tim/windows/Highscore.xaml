@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:AGS_Tim.windows"
       mc:Ignorable="d" 
     
-            d:DesignHeight="720"
+      d:DesignHeight="720"
       d:DesignWidth="1280"
       Title="Menu"
       
@@ -28,9 +28,9 @@
         <Border Grid.Row="2"
             BorderBrush="RoyalBlue"
             BorderThickness="2">
-            <DataGrid 
-                Grid.Row="1">
-            </DataGrid>
+            <Image
+                Stretch="None">
+            </Image>
         </Border>
     </Grid>
 </Page>
