@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SQLite;
 
 namespace AGS_Tim.models
 {
-   public class QuestionType
+    /// <summary> Stellt die Hardware Input Möglichkeiten dar </summary>
+    public enum EHWInput
     {
-        [PrimaryKey, AutoIncrement]
-        public int id { get; set; }
-        public string name { get; set; }
+        Keyboard = 0,
+        HopScotch = 1
     }
 }

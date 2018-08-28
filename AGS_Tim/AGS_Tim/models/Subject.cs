@@ -7,14 +7,10 @@ using SQLite;
 
 namespace AGS_Tim.models
 {
-    public class Highscore
+    public class Subject
     {
         [PrimaryKey, AutoIncrement]
         public int id { get; set; }
         public string name { get; set; }
-        public DateTime dateCreated { get; set; }
-        public int points { get; set; }
-        public int timer { get; set; }
-        public int level { get; set; }
     }
 }
