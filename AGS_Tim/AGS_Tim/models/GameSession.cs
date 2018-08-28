@@ -13,5 +13,11 @@ namespace AGS_Tim.models
         public DateTime startTime;
         public DateTime endTime;
         public int inputType;  
+
+        public GameSession()
+        {
+
+        }
+
     }
 }
