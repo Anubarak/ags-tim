@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.
+using System.Drawing;
 
 namespace AGS_Tim.models
 {
@@ -11,7 +11,8 @@ namespace AGS_Tim.models
     {
         public Question Question;
         public Subject Subject;
-        public 
+        public Image PlayerPicture;
+        public string Name; 
 
     }
 }
