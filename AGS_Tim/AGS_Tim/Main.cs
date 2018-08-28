@@ -16,7 +16,8 @@ namespace AGS_Tim
         public static Highscores highscores;
         public static Questions questions;
         public static MainWindow mainWindow;
-        public static GameSession gameSession; 
+        public static GameSession gameSession;
+        public static Hardware hardware;
 
        public  static void init()
         {
@@ -24,6 +25,7 @@ namespace AGS_Tim
             highscores = new Highscores();
             questions = new Questions();
             mainWindow = new MainWindow();
+            hardware = new Hardware(mainWindow);
         }
     }
 }
