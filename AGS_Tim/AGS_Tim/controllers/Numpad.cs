@@ -2,35 +2,70 @@
 using System;
 using System.Management;
 using System.Threading;
+using System.Windows;
 
 namespace AGS_Tim.controllers
 {
     public class Numpad : InputController
     {
-        public Numpad()
+        /// <summary> Initializes the <see cref="Numpad"/> class and connects the keyboard events from the MainWindow </summary>
+        /// <param name="mainWindow"></param>
+        public Numpad(Window mainWindow)
         {
-            
+            availabilityThread = new Thread(new ThreadStart(checkAvailability));
+            availabilityThread.Start();
+            mainWindow.KeyDown += MainWindow_KeyDown;
         }
 
-        /// <summary> Methode für Threadaufruf. Prüft ob die Hardwarekomponente verfügbar ist </summary>
-        private void checkAvailability()
+        /// <summary> Behandelt das Drücken einer Tastaturtaste, wenn das MainWindow im Fokus ist </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainWindow_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            bool oldAvailable = Available;
-            while(true)
+            int numberPressed = 0;
+            switch (e.Key)
             {
-                if (Available != oldAvailable)
-                {
-                    if (Disconnected != null)
-                        Disconnected(this, EHWInput.Keyboard);
-                }
+                case System.Windows.Input.Key.D1:
+                    numberPressed = 1;
+                    break;
+                case System.Windows.Input.Key.D2:
+                    numberPressed = 2;
+                    break;
+                case System.Windows.Input.Key.D3:
+                    numberPressed = 3;
+                    break;
+                case System.Windows.Input.Key.D4:
+                    numberPressed = 4;
+                    break;
+                case System.Windows.Input.Key.D5:
+                    numberPressed = 5;
+                    break;
+                case System.Windows.Input.Key.D6:
+                    numberPressed = 6;
+                    break;
+                case System.Windows.Input.Key.D7:
+                    numberPressed = 7;
+                    break;
+                case System.Windows.Input.Key.D8:
+                    numberPressed = 8;
+                    break;
+                case System.Windows.Input.Key.D9:
+                    numberPressed = 9;
+                    break;
             }
+
+            if (numberPressed != 0 && ButtonPressed != null)
+                ButtonPressed(this, numberPressed);
         }
 
+        /// <summary> Behandelt das Drücken einer Taste </summary>
         public event EventHandler<int> ButtonPressed;
+
+        /// <summary> Event welches beim Connect der Hardware feuert </summary>
+        public event EventHandler<EHWInput> Connected;
 
         /// <summary> Event welches beim Disconnect der Harware feuert </summary>
         public event EventHandler<EHWInput> Disconnected;
-        public event EventHandler<EHWInput> Connected;
 
         /// <summary> Gibt an ob die Hardware verfügbar ist </summary>
         public bool Available
@@ -47,6 +82,24 @@ namespace AGS_Tim.controllers
             }
         }
 
-        Thread availabilityThread;
+        /// <summary> Methode für Threadaufruf. Prüft alle 5 Sekunden ob die Hardwarekomponente verfügbar ist </summary>
+        private void checkAvailability()
+        {
+            bool oldAvailable = Available;
+            while (true)
+            {
+                if (Available != oldAvailable)
+                {
+                    if (Available && Connected != null)
+                        Connected(this, EHWInput.Keyboard);
+                    if (!Available && Disconnected != null)
+                        Disconnected(this, EHWInput.Keyboard);
+                }
+                oldAvailable = Available;
+                Thread.Sleep(5000);
+            }
+        }
+
+        private Thread availabilityThread;
     }
 }

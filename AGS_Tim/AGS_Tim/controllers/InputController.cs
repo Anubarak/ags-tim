@@ -9,11 +9,11 @@ namespace AGS_Tim.controllers
         /// <summary> Das ButtonPressed Event mit der Nummer des Buttons </summary>
         event EventHandler<int> ButtonPressed;
 
-        /// <summary> Event welches beim Disconnect den nächsten Funktionierenden Controller liefert </summary>
-        event EventHandler<EHWInput> Disconnected;
-
         /// <summary> Event welches bei Verbindung von </summary>
         event EventHandler<EHWInput> Connected;
+
+        /// <summary> Event welches beim Disconnect den nächsten Funktionierenden Controller liefert </summary>
+        event EventHandler<EHWInput> Disconnected;
 
         /// <summary> Gibt an ob der Controller verfügbar ist </summary>
         bool Available { get; }
