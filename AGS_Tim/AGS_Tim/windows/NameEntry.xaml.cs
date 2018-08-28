@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace AGS_Tim.windows
 {
     /// <summary>
-    /// Interaction logic for Game.xaml
+    /// Interaction logic for NameEntry.xaml
     /// </summary>
-    public partial class Game : Window
+    public partial class NameEntry : Page
     {
-        public Game()
+        public NameEntry()
         {
             InitializeComponent();
         }

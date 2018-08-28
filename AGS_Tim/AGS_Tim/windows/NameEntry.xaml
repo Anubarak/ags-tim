@@ -1,0 +1,63 @@
+﻿<Page x:Class="AGS_Tim.windows.NameEntry"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AGS_Tim.windows"
+      mc:Ignorable="d" 
+      
+      d:DesignHeight="720"
+      d:DesignWidth="1280"
+      Title="Menu"
+      
+      Background="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label 
+            Grid.Row="0"
+            Background="RoyalBlue"
+            Foreground="White"
+            Content="TIM-Arbeit">
+        </Label>
+
+        <Border Grid.Row="2"
+            BorderBrush="RoyalBlue"
+            BorderThickness="2">
+        </Border>
+
+        <Label    
+            Grid.Row="1"
+            Margin="0,42,0,600"
+            Content="TIM"
+            FontSize="35"
+            FontWeight="Bold"
+            HorizontalAlignment="Center">
+        </Label>
+
+        <TextBlock
+            Grid.Row="1"
+            Margin="0,120,0,490"
+            FontSize="25"
+            FontWeight="Bold"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            TextAlignment="Center">
+            <Run>Bitte geben Sie</Run> <LineBreak/> 
+            <Run>ihren Namen ein!</Run>
+        </TextBlock>
+        <TextBox
+            Grid.Row="1"
+            Margin="0,280,0,380"
+            Background="White"
+            BorderBrush="Black"
+            FontSize="22"
+            Width="350">
+        </TextBox>
+
+    </Grid>
+</Page>

@@ -1,0 +1,36 @@
+﻿<Window x:Class="AGS_Tim.windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AGS_Tim.windows"
+        mc:Ignorable="d"
+        
+        Title="TIM-Arbeit"
+        Height="720"
+        Width="1280"
+        
+        Background="White"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label 
+            Grid.Row="0"
+            Background="RoyalBlue"
+            Foreground="White"
+            Content="TIM-Arbeit">
+        </Label>
+
+        <Border Grid.Row="2"
+            BorderBrush="RoyalBlue"
+            BorderThickness="2">
+        </Border>
+    </Grid>
+</Window>

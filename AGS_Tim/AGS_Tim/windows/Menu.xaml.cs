@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace AGS_Tim.windows
@@ -17,11 +18,16 @@ namespace AGS_Tim.windows
     /// <summary>
     /// Interaction logic for Menu.xaml
     /// </summary>
-    public partial class Menu : Window
+    public partial class Menu : Page
     {
         public Menu()
         {
             InitializeComponent();
+        }
+
+        private void StartClick(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
