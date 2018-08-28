@@ -13,6 +13,13 @@ namespace AGS_Tim.controllers
 
         public bool Available { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
+        public EHWInput hWInputType => EHWInput.HopScotch;
+
         private bool available = false;
+
+        public Delegate[] GetButtonPressedMethodsAndUnsubscribe()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

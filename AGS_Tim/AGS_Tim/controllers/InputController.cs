@@ -17,5 +17,12 @@ namespace AGS_Tim.controllers
 
         /// <summary> Gibt an ob der Controller verfügbar ist </summary>
         bool Available { get; }
+
+        /// <summary> Type of the InputController </summary>
+        EHWInput hWInputType { get; }
+
+        /// <summary> Unsubscribes handler of the <see cref="ButtonPressed"/> and returns them </summary>
+        /// <returns></returns>
+        Delegate[] GetButtonPressedMethodsAndUnsubscribe();
     }
 }
