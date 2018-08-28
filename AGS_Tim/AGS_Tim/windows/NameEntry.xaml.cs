@@ -24,5 +24,7 @@ namespace AGS_Tim.windows
         {
             InitializeComponent();
         }
+
+
     }
 }
