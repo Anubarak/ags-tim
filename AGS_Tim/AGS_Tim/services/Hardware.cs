@@ -22,7 +22,7 @@ namespace AGS_Tim.services
                 availableHWInputs.Add(EHWInput.Keyboard);
             inputControllers.Add(numpad);
             // HopScotch
-
+            HopscotchMat mat = new HopscotchMat();
             if (availableHWInputs.Count == 0)
                 throw new Exception("No Input Devices found");
             activeController = inputControllers.Find(x => x.hWInputType == availableHWInputs.Max());
