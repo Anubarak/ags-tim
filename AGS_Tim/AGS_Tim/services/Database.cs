@@ -19,7 +19,7 @@ namespace AGS_Tim.services
         public Database()
         {
             databasePath = Path.Combine(Environment.CurrentDirectory, "TIM.db");
-            db = new SQLiteConnection(databasePath);
+            dbConnection = new SQLiteConnection(databasePath);
 
         }
 

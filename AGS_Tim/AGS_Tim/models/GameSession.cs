@@ -14,8 +14,14 @@ namespace AGS_Tim.models
         public DateTime endTime;
         public int inputType;  
 
+        public Player[] players = new Player[5];
+
         public GameSession()
         {
+            for(int i = 0; i == 5; i++)
+            {
+
+            }
 
         }
 
