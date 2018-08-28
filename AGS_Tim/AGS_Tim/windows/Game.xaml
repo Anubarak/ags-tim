@@ -30,9 +30,6 @@
             BorderThickness="2">
         </Border>
 
-
-
-
         <Image
             HorizontalAlignment="Left"
             Height="677"
@@ -49,10 +46,29 @@
             Grid.Row="1"
             FontSize="25"
             FontWeight="Bold"
-            Text="TextBox"
             VerticalAlignment="Top"
             Width="625">
         </TextBox>
+
+        <Image
+            HorizontalAlignment="Left"
+            Height="239"
+            Margin="10,9.8,0,0"
+            Grid.Row="1"
+            VerticalAlignment="Top"
+            Width="149">
+        </Image>
+
+        <TextBlock
+            HorizontalAlignment="Left"
+            Margin="164,9.8,0,0"
+            Grid.Row="1"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top"
+            Height="239"
+            Width="471"
+            FontSize="28">
+        </TextBlock>
 
     </Grid>
 </Page>

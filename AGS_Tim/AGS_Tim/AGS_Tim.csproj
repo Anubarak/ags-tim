@@ -106,6 +106,7 @@
     <Compile Include="models\QuestionType.cs" />
     <Compile Include="models\Subject.cs" />
     <Compile Include="services\Database.cs" />
+    <Compile Include="services\Hardware.cs" />
     <Compile Include="services\Highscores.cs" />
     <Compile Include="services\Questions.cs" />
     <Compile Include="App.xaml.cs">
@@ -114,6 +115,9 @@
     </Compile>
     <Compile Include="windows\Game.xaml.cs">
       <DependentUpon>Game.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="windows\Highscore.xaml.cs">
+      <DependentUpon>Highscore.xaml</DependentUpon>
     </Compile>
     <Compile Include="windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -156,6 +160,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="windows\Game.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\Highscore.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
