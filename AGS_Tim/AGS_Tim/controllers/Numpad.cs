@@ -80,39 +80,39 @@ namespace AGS_Tim.controllers
             int numberPressed = 0;
             switch (e.Key)
             {
-                case System.Windows.Input.Key.D1:
+                case System.Windows.Input.Key.NumPad1:
                     numberPressed = 1;
                     break;
 
-                case System.Windows.Input.Key.D2:
+                case System.Windows.Input.Key.NumPad2:
                     numberPressed = 2;
                     break;
 
-                case System.Windows.Input.Key.D3:
+                case System.Windows.Input.Key.NumPad3:
                     numberPressed = 3;
                     break;
 
-                case System.Windows.Input.Key.D4:
+                case System.Windows.Input.Key.NumPad4:
                     numberPressed = 4;
                     break;
 
-                case System.Windows.Input.Key.D5:
+                case System.Windows.Input.Key.NumPad5:
                     numberPressed = 5;
                     break;
 
-                case System.Windows.Input.Key.D6:
+                case System.Windows.Input.Key.NumPad6:
                     numberPressed = 6;
                     break;
 
-                case System.Windows.Input.Key.D7:
+                case System.Windows.Input.Key.NumPad7:
                     numberPressed = 7;
                     break;
 
-                case System.Windows.Input.Key.D8:
+                case System.Windows.Input.Key.NumPad8:
                     numberPressed = 8;
                     break;
 
-                case System.Windows.Input.Key.D9:
+                case System.Windows.Input.Key.NumPad9:
                     numberPressed = 9;
                     break;
             }
