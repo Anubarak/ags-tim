@@ -14,6 +14,7 @@ namespace AGS_Tim.models
         public Question Question;
         public Subject Subject;
         public Image PlayerPicture;
+        public int level; 
         public string Name; 
 
 
@@ -21,11 +22,11 @@ namespace AGS_Tim.models
         /// Sets a new random Question according to the set subject
         /// </summary>
        public void GetQuestion() {
-          Question =  Main.questions.GetNewQuestion(Subject.id);
+          Question =  Main.questions.GetNewQuestion(Subject.id, level);
             if (Question == null)
             {
                 GetSubject();
-                Main.questions.GetNewQuestion(Subject.id);
+                Main.questions.GetNewQuestion(Subject.id, level );
             }
         }
 

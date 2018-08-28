@@ -14,11 +14,15 @@ namespace AGS_Tim.models
    public class GameSession
     {
 
+        List<Image> playerPictures = new List<Image>();
+
         public List<int> playersCompleted;
         public DateTime startTime;
         public DateTime endTime;
         public int inputType;
-        List<Image> playerPictures = new List<Image>();
+        public string userName;
+        public int points;
+        public int level; 
 
 
         public Player[] players = new Player[6];
@@ -34,6 +38,7 @@ namespace AGS_Tim.models
             {
                 players[i] = new Player();
                 players[i].GetSubject();
+                players[i].level = 1; // zum Testen hier muss das Level aus den Einstellungen übernommen werden
                 players[i].GetQuestion();
                 players[i].PlayerPicture = playerPictures[0];
 

@@ -20,7 +20,7 @@ namespace AGS_Tim.services
         /// </summary>
         /// <param name="Subject"> Subject ID</param>
         /// <returns>Random Question</returns>
-        public Question GetNewQuestion(int Subject)
+        public Question GetNewQuestion(int Subject, int level)
         {
             Question newQuestion;
             Random rnd = new Random();
@@ -28,7 +28,7 @@ namespace AGS_Tim.services
             int questionCounter = 0;
 
             //table with all Questions of the subject
-            var tempQuestions =  Main.db.dbConnection.Table<Question>().Where(v => v.subjectId.Equals(Subject));
+            var tempQuestions =  Main.db.dbConnection.Table<Question>().Where(v => (v.subjectId.Equals(Subject)) && (v.level == level));
 
          if (questionIds.Count <= 0)
             {

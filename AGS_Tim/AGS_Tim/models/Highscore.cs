@@ -14,7 +14,7 @@ namespace AGS_Tim.models
         public string name { get; set; }
         public DateTime dateCreated { get; set; }
         public int points { get; set; }
-        public int timer { get; set; }
+        public TimeSpan timer { get; set; }
         public int level { get; set; }
     }
 }

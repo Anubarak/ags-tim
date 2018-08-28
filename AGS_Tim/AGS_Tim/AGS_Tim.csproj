@@ -118,6 +118,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="services\Subjects.cs" />
+    <Compile Include="services\Validate.cs" />
     <Compile Include="windows\Game.xaml.cs">
       <DependentUpon>Game.xaml</DependentUpon>
     </Compile>
