@@ -81,15 +81,15 @@ namespace AGS_Tim.controllers
             switch (e.Key)
             {
                 case System.Windows.Input.Key.NumPad1:
-                    numberPressed = 1;
+                    numberPressed = 7;
                     break;
 
                 case System.Windows.Input.Key.NumPad2:
-                    numberPressed = 2;
+                    numberPressed = 8;
                     break;
 
                 case System.Windows.Input.Key.NumPad3:
-                    numberPressed = 3;
+                    numberPressed = 9;
                     break;
 
                 case System.Windows.Input.Key.NumPad4:
@@ -105,15 +105,15 @@ namespace AGS_Tim.controllers
                     break;
 
                 case System.Windows.Input.Key.NumPad7:
-                    numberPressed = 7;
+                    numberPressed = 1;
                     break;
 
                 case System.Windows.Input.Key.NumPad8:
-                    numberPressed = 8;
+                    numberPressed = 2;
                     break;
 
                 case System.Windows.Input.Key.NumPad9:
-                    numberPressed = 9;
+                    numberPressed = 3;
                     break;
             }
 
