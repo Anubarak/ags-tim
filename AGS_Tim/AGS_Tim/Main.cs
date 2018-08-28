@@ -1,4 +1,5 @@
 ﻿using AGS_Tim.services;
+using AGS_Tim.windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,12 +14,14 @@ namespace AGS_Tim
         public static Database db;
         public static Highscores highscores;
         public static Questions questions;
+        public static MainWindow mainWindow;
 
        public  static void init()
         {
             db = new Database();
             highscores = new Highscores();
             questions = new Questions();
+            mainWindow = new MainWindow();
         }
     }
 }

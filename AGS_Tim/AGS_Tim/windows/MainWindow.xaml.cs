@@ -15,13 +15,15 @@ using System.Windows.Shapes;
 namespace AGS_Tim.windows
 {
     /// <summary>
-    /// Interaction logic for Highscore.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Highscore : Window
+    public partial class MainWindow : Window
     {
-        public Highscore()
+        public MainWindow()
         {
             InitializeComponent();
+
+            this.Content = new Menu();
         }
     }
 }
