@@ -7,40 +7,42 @@ using System.Threading.Tasks;
 using System.IO;
 using SQLite;
 using System.Diagnostics;
+using AGS_Tim.models;
 
 namespace AGS_Tim.services
 {
     public class Database
     {
-       public  Database()
+        public Database()
         {
             var databasePath = Path.Combine(Environment.CurrentDirectory, "TIM.db");
             var db = new SQLiteConnection(databasePath);
 
             //Test
 
-            //QuestionType Test2 = new QuestionType(){
-            //    name = "Test2"
-            //};
-            
-            //var s = db.Insert(Test2);
+          //  Highscore Test2 = new Highscore()
+          //  {
+          //      name = "Higscore1",
+          //      dateCreated = DateTime.Now,
+          //      points = 100,
+          //      timer = 100,
+          //      level = 1
 
-            //var TestName = db.Table<QuestionType>();
+          //  };
 
-            //foreach (var name in TestName)
-            //    Debug.WriteLine(name.name);
+          ////  var s = db.Insert(Test2);
 
+          //  var TestName = db.Table<Highscore>();
+
+          //  foreach (var name in TestName) {
+          //      Debug.WriteLine(name.name + "     " + name.dateCreated);
+                
+}
         }
     }
 
-
-
-
-    public class QuestionType
-    {
-        [PrimaryKey, AutoIncrement]
-        public int id { get; set; }
-        public string name { get; set; }
-    }
 }
+
+
+
 

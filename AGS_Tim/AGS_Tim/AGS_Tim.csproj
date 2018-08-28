@@ -101,6 +101,7 @@
     <Compile Include="models\Highscore.cs" />
     <Compile Include="models\Player.cs" />
     <Compile Include="models\QuestionType.cs" />
+    <Compile Include="models\Subject.cs" />
     <Compile Include="services\Database.cs" />
     <Compile Include="services\Highscores.cs" />
     <Compile Include="services\Questions.cs" />

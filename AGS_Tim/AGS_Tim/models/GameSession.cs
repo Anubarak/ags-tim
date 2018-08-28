@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace AGS_Tim.models
 {
-    class GameSession
+   public class GameSession
     {
+        public List<int> answeredQuestions;
+        public List<int> playersCompleted;
+        public DateTime startTime;
+        public DateTime endTime;
+        public int inputType;  
     }
 }
