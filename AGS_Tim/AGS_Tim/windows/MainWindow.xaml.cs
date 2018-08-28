@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AGS_Tim.services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace AGS_Tim.windows
         private NameEntry nameEntry;
         private Game game;
         private Highscore highscore;
+        private InputConverter inputConverter;
 
         public MainWindow()
         {
@@ -69,6 +71,20 @@ namespace AGS_Tim.windows
             }
 
             return this.game;
+        }
+
+        public InputConverter ConvertInput(int ButtonNumber, Action<char> Callback)
+        {
+            if (this.inputConverter == null)
+            {
+                this.inputConverter = new InputConverter();
+            }
+
+            this.inputConverter.Callback = Callback;
+            this.inputConverter.Current = ButtonNumber;
+            this.inputConverter.StartTimer();
+
+            return this.inputConverter;
         }
 
         public void ButtonPressed(object sender, int ButtonNumber)
