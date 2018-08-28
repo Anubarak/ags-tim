@@ -112,6 +112,7 @@
     <Compile Include="services\Database.cs" />
     <Compile Include="services\Hardware.cs" />
     <Compile Include="services\Highscores.cs" />
+    <Compile Include="services\InputConverter.cs" />
     <Compile Include="services\Questions.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
