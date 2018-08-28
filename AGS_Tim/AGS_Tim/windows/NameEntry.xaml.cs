@@ -1,5 +1,4 @@
-﻿using AGS_Tim;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,18 +16,13 @@ using System.Windows.Shapes;
 namespace AGS_Tim.windows
 {
     /// <summary>
-    /// Interaction logic for Menu.xaml
+    /// Interaction logic for NameEntry.xaml
     /// </summary>
-    public partial class Menu : Page
+    public partial class NameEntry : Page
     {
-        public Menu()
+        public NameEntry()
         {
             InitializeComponent();
-        }
-
-        private void StartClick(object sender, RoutedEventArgs e)
-        {
-            Main.mainWindow.Content = new NameEntry();
         }
     }
 }

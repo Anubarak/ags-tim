@@ -17,6 +17,8 @@ namespace AGS_Tim
         private void StartUp(object sender, StartupEventArgs e)
         {
             AGS_Tim.Main.init();
+
+            AGS_Tim.Main.mainWindow.ShowDialog();
         }
 
     }

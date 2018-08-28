@@ -1,12 +1,101 @@
-﻿<Window x:Class="AGS_Tim.windows.Menu"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AGS_Tim.windows"
-        mc:Ignorable="d"
-        Title="Menu" Height="450" Width="800">
+﻿<Page x:Class="AGS_Tim.windows.Menu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AGS_Tim.windows"
+      mc:Ignorable="d" 
+      
+       d:DesignHeight="720"
+      d:DesignWidth="1280"
+      Title="Menu"
+      
+      Background="White">
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label 
+            Grid.Row="0"
+            Background="RoyalBlue"
+            Foreground="White"
+            Content="TIM-Arbeit">
+        </Label>
+
+        <Border Grid.Row="2"
+            BorderBrush="RoyalBlue"
+            BorderThickness="2">
+        </Border>
+
+        <Label    
+            Grid.Row="1"
+            Margin="0,42,0,600"
+            Content="TIM"
+            FontSize="35"
+            FontWeight="Bold"
+            HorizontalAlignment="Center">
+        </Label>
+
+        <TextBlock
+            Grid.Row="1"
+            Margin="0,120,0,490"
+            FontSize="25"
+            FontWeight="Bold"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            TextAlignment="Center">
+            <Run>Dies ist ein Einleitungstext,</Run> <LineBreak/> 
+            <Run>welcher die Situation erklärt</Run>
+        </TextBlock>
+        <StackPanel
+            Grid.Row="1"
+            Margin="0,280,0,230"
+            >
+            <Button 
+                Background="White"
+                BorderBrush="Black"
+                FontSize="22"
+                Content="Start"
+                Width="250"
+                Click="StartClick">
+            </Button>
+            <Separator
+                Background="Transparent"
+                Height="7">
+            </Separator>
+            <Button 
+                Background="White"
+                BorderBrush="Black"
+                FontSize="22"
+                Content="Highscore"
+                Width="250">
+            </Button>
+            <Separator
+                Background="Transparent"
+                Height="7">
+            </Separator>
+            <Button 
+                Background="White"
+                BorderBrush="Black"
+                FontSize="22"
+                Content="Einstellungen"
+                Width="250">
+            </Button>
+            <Separator
+                Background="Transparent"
+                Height="7">
+            </Separator>
+            <Button 
+                Background="White"
+                BorderBrush="Black"
+                FontSize="22"
+                Content="Beenden"
+                Width="250">
+            </Button>
+        </StackPanel>
+
     </Grid>
-</Window>
+</Page>
