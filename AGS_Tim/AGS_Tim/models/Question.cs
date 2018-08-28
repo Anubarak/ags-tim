@@ -12,6 +12,7 @@ namespace AGS_Tim.models
         [PrimaryKey, AutoIncrement]
         public int id { get; set; }
         public int questionTypeID { get; set; }
+        public int subjectId { get; set; }
         public int level { get; set; }
         public string text { get; set; }
         public string correctAnswer { get; set; }

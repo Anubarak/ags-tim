@@ -1,5 +1,6 @@
 ﻿using AGS_Tim.services;
 using AGS_Tim.windows;
+using AGS_Tim.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace AGS_Tim
         public static Highscores highscores;
         public static Questions questions;
         public static MainWindow mainWindow;
+        public static GameSession gameSession; 
 
        public  static void init()
         {

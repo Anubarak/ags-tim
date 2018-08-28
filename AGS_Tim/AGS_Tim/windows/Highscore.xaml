@@ -1,0 +1,36 @@
+﻿<Page x:Class="AGS_Tim.windows.Highscore"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AGS_Tim.windows"
+      mc:Ignorable="d" 
+    
+            d:DesignHeight="720"
+      d:DesignWidth="1280"
+      Title="Menu"
+      
+      Background="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label 
+            Grid.Row="0"
+            Background="RoyalBlue"
+            Foreground="White"
+            Content="TIM-Arbeit">
+        </Label>
+
+        <Border Grid.Row="2"
+            BorderBrush="RoyalBlue"
+            BorderThickness="2">
+            <DataGrid 
+                Grid.Row="1">
+            </DataGrid>
+        </Border>
+    </Grid>
+</Page>
