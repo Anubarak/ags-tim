@@ -17,7 +17,8 @@ namespace AGS_Tim
         public static Questions questions;
         public static Subjects subjects; 
         public static MainWindow mainWindow;
-        public static GameSession gameSession; 
+        public static GameSession gameSession;
+        public static Hardware hardware;
 
        public  static void init()
         {
@@ -26,12 +27,11 @@ namespace AGS_Tim
             questions = new Questions();
             subjects = new Subjects(); 
             mainWindow = new MainWindow();
-        
+            hardware = new Hardware(mainWindow);
+
             //Zum Testen
-            gameSession = new GameSession(); 
-  
-      
-     
+            gameSession = new GameSession();
+
         }
     }
 }
