@@ -25,5 +25,10 @@ namespace AGS_Tim.windows
 
             this.Content = new Menu();
         }
+
+        public void ButtonPressed(object sender, int ButtonNumber)
+        {
+
+        }
     }
 }
