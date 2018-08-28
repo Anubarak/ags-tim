@@ -19,16 +19,80 @@ namespace AGS_Tim.windows
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Menu menu;
+        private NameEntry nameEntry;
+        private Game game;
+        private Highscore highscore;
+
         public MainWindow()
         {
             InitializeComponent();
 
-            this.Content = new Menu();
+            this.Content = this.getMenu();
+        }
+
+        public Menu getMenu()
+        {
+            if (this.menu == null)
+            {
+                this.menu = new Menu();
+            }
+
+            return this.menu;
+        }
+
+        public NameEntry GetNameEntry(bool forceRefresh = false)
+        {
+            if (forceRefresh || this.nameEntry == null)
+            {
+                this.nameEntry = new NameEntry();
+            }
+
+            return this.nameEntry;
+        }
+
+        public Highscore GetHighscore(bool forceRefresh = false)
+        {
+            if (forceRefresh || this.highscore == null)
+            {
+                this.highscore = new Highscore();
+            }
+
+            return this.highscore;
+        }
+
+        public Game GetGame(bool forceRefresh = false)
+        {
+            if (forceRefresh || this.game == null)
+            {
+                this.game = new Game();
+            }
+
+            return this.game;
         }
 
         public void ButtonPressed(object sender, int ButtonNumber)
         {
+            if (this.Content.GetType() == typeof(Menu))
+            {
+                this.menu.ButtonPressed(ButtonNumber);
+            }
+            else if (this.Content.GetType() == typeof(NameEntry))
+            {
 
+            }
+            else if (this.Content.GetType() == typeof(Game))
+            {
+
+            }
+            else if (this.Content.GetType() == typeof(Highscore))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Fehler");
+            }
         }
     }
 }
