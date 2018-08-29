@@ -33,8 +33,14 @@ namespace AGS_Tim.windows
             }
             else
             {
-
+                Action<char> action = new Action<char>(TimerElapsed);
+                Main.mainWindow.ConvertInput(ButtonNumber, action);
             }
+        }
+
+        public void TimerElapsed(char x)
+        {
+            this.TbName.Text += x;
         }
     }
 }

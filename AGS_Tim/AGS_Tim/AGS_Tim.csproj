@@ -110,14 +110,17 @@
     <Compile Include="models\QuestionType.cs" />
     <Compile Include="models\Subject.cs" />
     <Compile Include="services\Database.cs" />
+    <Compile Include="services\GameSessions.cs" />
     <Compile Include="services\Hardware.cs" />
     <Compile Include="services\Highscores.cs" />
+    <Compile Include="services\InputConverter.cs" />
     <Compile Include="services\Questions.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="services\Subjects.cs" />
+    <Compile Include="services\Validate.cs" />
     <Compile Include="windows\Game.xaml.cs">
       <DependentUpon>Game.xaml</DependentUpon>
     </Compile>
@@ -184,6 +187,30 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tafel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\a_Punk.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\a_Schwarzer.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\a_Constanze.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\a_Fußballspieler.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\a_Goth.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\a_Hipster.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\a_Lehrer.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.109.1\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.109.1\build\net46\System.Data.SQLite.Core.targets')" />

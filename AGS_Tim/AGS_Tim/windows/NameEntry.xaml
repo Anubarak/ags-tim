@@ -29,7 +29,9 @@
             BorderBrush="RoyalBlue"
             BorderThickness="2">
             <Image
-                Stretch="None">
+                Stretch="None"
+                Source="/AGS_Tim;component/Resources/tafel.jpg"
+                >
             </Image>
         </Border>
 
@@ -39,6 +41,7 @@
             Content="TIM"
             FontSize="35"
             FontWeight="Bold"
+            Foreground="White"
             HorizontalAlignment="Center">
         </Label>
 
@@ -47,6 +50,7 @@
             Margin="0,120,0,490"
             FontSize="25"
             FontWeight="Bold"
+            Foreground="White"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             TextAlignment="Center">
@@ -54,11 +58,13 @@
             <Run>ihren Namen ein!</Run>
         </TextBlock>
         <TextBox
+            Name="TbName"
             Grid.Row="1"
             Margin="0,280,0,380"
             Background="White"
             BorderBrush="Black"
             FontSize="22"
+            TextAlignment="Center"
             Width="350">
         </TextBox>
 
