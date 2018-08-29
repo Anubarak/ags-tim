@@ -32,6 +32,9 @@ namespace AGS_Tim
             mainWindow = new MainWindow();
             hardware = new Hardware(mainWindow);
 
+            settings.LoadSettings();
+
+            
             //Zum Testen
             //settings.level = 15;
             //settings.SaveSettings(); 

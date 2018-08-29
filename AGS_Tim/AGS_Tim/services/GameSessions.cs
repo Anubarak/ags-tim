@@ -21,6 +21,7 @@ namespace AGS_Tim.services
         {
             gs = new GameSession();
             gs.players = new Player[6];
+            gs.wrongAnswerCounter = 0; 
 
             Random rnd = new Random();
             List<int> usedPlayerIds = new List<int>();
