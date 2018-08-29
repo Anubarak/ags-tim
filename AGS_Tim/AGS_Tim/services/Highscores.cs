@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AGS_Tim.models;
 
 
+
 namespace AGS_Tim.services
 {
     class Highscores
@@ -15,10 +16,10 @@ namespace AGS_Tim.services
             Highscore hs = new Highscore();
 
             hs.dateCreated = DateTime.Now;
-            hs.level = Main.gameSession.level;
-            hs.name = Main.gameSession.userName;
-            hs.points = Main.gameSession.points;
-            hs.timer = Main.gameSession.endTime - Main.gameSession.startTime; 
+            hs.level = Main.gameSession.gs.level;
+            hs.name = Main.gameSession.gs.userName;
+            hs.points = Main.gameSession.gs.points;
+            hs.timer = Main.gameSession.gs.endTime - Main.gameSession.gs.startTime; 
            
             return true;
         }
