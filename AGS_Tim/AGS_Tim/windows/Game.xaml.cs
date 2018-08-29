@@ -29,6 +29,7 @@ namespace AGS_Tim.windows
         bool IsAnswering = false;
         int CurrentTable = 1;
         Player activePlayer;
+        string answerInput = "";
         
         
 
@@ -51,22 +52,6 @@ namespace AGS_Tim.windows
                 this.BorderCharacter.Visibility = Visibility.Visible;
                 this.LblCharacter.Content = inputConverter.GetCharacter();
 
-
-                //if (Main.validate.CheckAnswer(TbAnswer.Text) == ValidateAnswerResponse.WrongAnswer)
-                //{
-                //    TbAnswer.Text = TbAnswer.Text.Remove(0, TbAnswer.Text.Count());
-                //}
-                //else if (Main.validate.CheckAnswer(TbAnswer.Text) == ValidateAnswerResponse.AnswerComplete)
-                //{
-                //    // Methode die den Spieler auf gelöst setzt
-
-
-                //    // zurück in den anderen Modus
-                //    IsAnswering = false;
-                //}
-
-
-
             }
             else
             {
@@ -77,6 +62,7 @@ namespace AGS_Tim.windows
                     this.TbQuestion.Text = activePlayer.Question.text;
                     this.ImgPlayer.Source = new BitmapImage(new Uri("pack://application:,,,/Pictures/" + activePlayer.PlayerPicture));
                     ImageBehavior.SetAnimatedSource(ImgPlayer, ImgPlayer.Source);
+                    this.ImgPlayer.Visibility = Visibility.Visible;
                 }
                 else if (ButtonNumber == 2 || ButtonNumber == 8)
                 {
@@ -199,7 +185,33 @@ namespace AGS_Tim.windows
 
         public void TimerElapsed(char x)
         {
-            this.TbAnswer.Text += x;
+
+            answerInput = answerInput + x;
+            if (Main.validate.CheckAnswer(answerInput) == ValidateAnswerResponse.WrongAnswer)
+            {
+                answerInput = answerInput.Remove(answerInput.Length -1  , 1);
+
+            }
+            else if (Main.validate.CheckAnswer(answerInput) == ValidateAnswerResponse.AnswerComplete)
+            {
+             //   Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
+                TbAnswer.Text = "";
+                TbQuestion.Text = "";
+                answerInput = "";
+                this.ImgPlayer.Visibility = Visibility.Hidden;
+                this.ImgPlayer.Source = null;
+                ImageBehavior.SetAnimatedSource(ImgPlayer,null);
+
+                // zurück in den anderen Modus
+                IsAnswering = false;
+            }
+            else if (Main.validate.CheckAnswer(answerInput) == ValidateAnswerResponse.CorrectAnswer)
+            {
+
+            }
+
+
+            this.TbAnswer.Text = answerInput;
             this.LblCharacter.Content = "";
             this.BorderCharacter.Visibility = Visibility.Hidden;
 

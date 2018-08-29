@@ -15,7 +15,8 @@ namespace AGS_Tim.models
         public Subject Subject;
         public string PlayerPicture;
         public int level; 
-        public string Name; 
+        public string Name;
+        public int ID;
 
 
         /// <summary>

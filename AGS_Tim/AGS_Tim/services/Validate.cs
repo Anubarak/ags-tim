@@ -26,11 +26,13 @@ namespace AGS_Tim.services
         public ValidateAnswerResponse CheckAnswer(string input)
         {
             string tempAnswer = answer.Substring(0, input.Length).ToLower();
-            if (input.ToLower().Equals("") || input == null)
+            string inputerLowerCase = input.ToLower();
+
+            if (inputerLowerCase.Equals("") || input == null)
                 return ValidateAnswerResponse.WrongAnswer;
-            else if (answer.Equals(input))
+            else if (answer.Equals(inputerLowerCase))
                 return ValidateAnswerResponse.AnswerComplete;
-            else if (tempAnswer.Equals(input))
+            else if (tempAnswer.Equals(inputerLowerCase))
                 return ValidateAnswerResponse.CorrectAnswer;
             else
                 return ValidateAnswerResponse.WrongAnswer;

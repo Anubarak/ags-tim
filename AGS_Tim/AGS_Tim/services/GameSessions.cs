@@ -35,6 +35,7 @@ namespace AGS_Tim.services
                 gs.players[i].level = Main.settings.level; 
                 gs.players[i].GetQuestion();
                 gs.players[i].PlayerPicture = gs.playerPictures[0];
+                gs.players[i].ID = i;
 
                 gs. playerPictures.RemoveAt(0);
             }
