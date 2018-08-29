@@ -23,10 +23,12 @@ namespace AGS_Tim.windows
         bool IsAnswering = false;
         int CurrentTable = 1;
         Player activePlayer;
+        
 
         public Game()
         {
             InitializeComponent();
+            this.DataContext = this.activePlayer;
         }
 
         public void ButtonPressed(int ButtonNumber)
@@ -41,7 +43,7 @@ namespace AGS_Tim.windows
                     this.IsAnswering = true;
 
                     activePlayer =  Main.gameSession.gs.players[CurrentTable - 1];
-                    this.TbQuestion.Text = activePlayer.Question.text;
+                    //this.TbQuestion.Text = activePlayer.Question.text;
 
                 }
                 else if (ButtonNumber == 2 || ButtonNumber == 8)

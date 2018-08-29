@@ -69,9 +69,11 @@
         <TextBlock
             Name="TbQuestion"
             HorizontalAlignment="Left"
+            Foreground="White"
             Margin="164,9.8,0,0"
             Grid.Row="1"
             TextWrapping="Wrap"
+            Text="{Binding Question.Text, Mode=OneWay}"
             VerticalAlignment="Top"
             Height="239"
             Width="471"
