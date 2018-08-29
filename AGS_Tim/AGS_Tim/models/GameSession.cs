@@ -14,7 +14,7 @@ namespace AGS_Tim.models
     public class GameSession
     {
 
-        public List<Image> playerPictures = new List<Image>();
+        public List<Image> playerPictures;
 
         public List<int> playersCompleted;
         public DateTime startTime;
@@ -24,8 +24,7 @@ namespace AGS_Tim.models
         public int points;
         public int level;
 
-
-        public Player[] players = new Player[6];
+        public Player[] players;
 
     }
 }

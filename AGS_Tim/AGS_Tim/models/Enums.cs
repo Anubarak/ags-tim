@@ -6,4 +6,12 @@
         Keyboard = 0,
         HopScotch = 1
     }
+
+    public enum ValidateAnswerResponse
+    {
+        WrongAnswer = 0,
+        CorrectAnswer = 1,
+        AnswerComplete = 2
+
+    }
 }

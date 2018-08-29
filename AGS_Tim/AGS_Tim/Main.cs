@@ -19,6 +19,7 @@ namespace AGS_Tim
         public static MainWindow mainWindow;
         public static GameSessions gameSession;
         public static Hardware hardware;
+        public static Validate validate;
 
        public  static void init()
         {
@@ -30,7 +31,10 @@ namespace AGS_Tim
             hardware = new Hardware(mainWindow);
 
             //Zum Testen
-            gameSession = new GameSessions();
+            //gameSession = new GameSessions();
+            //validate = new Validate(gameSession.gs.players[0]);
+            //string a = "";
+            //validate.CheckAnswer(a);
 
         }
     }

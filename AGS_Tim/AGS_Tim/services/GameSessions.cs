@@ -14,7 +14,7 @@ namespace AGS_Tim.services
     {
 
 
-        public GameSession gs = new GameSession(); 
+        public GameSession gs; 
 
    
 
@@ -22,6 +22,7 @@ namespace AGS_Tim.services
 
         {
 
+            gs = new GameSession();
            gs.playerPictures = new List<Image>();
            gs.players = new Player[6];
 
