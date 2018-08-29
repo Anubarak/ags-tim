@@ -108,6 +108,7 @@
     <Compile Include="models\Highscore.cs" />
     <Compile Include="models\Player.cs" />
     <Compile Include="models\QuestionType.cs" />
+    <Compile Include="models\Setting.cs" />
     <Compile Include="models\Subject.cs" />
     <Compile Include="services\Database.cs" />
     <Compile Include="services\GameSessions.cs" />
@@ -119,6 +120,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="services\Settings.cs" />
     <Compile Include="services\Subjects.cs" />
     <Compile Include="services\Validate.cs" />
     <Compile Include="windows\Game.xaml.cs">
