@@ -65,8 +65,7 @@
                 BorderBrush="Black"
                 FontSize="22"
                 Content="Start"
-                Width="250"
-                Click="StartClick">
+                Width="250">
             </Button>
             <Separator
                 Background="Transparent"

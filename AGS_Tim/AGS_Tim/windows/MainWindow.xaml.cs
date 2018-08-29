@@ -25,6 +25,7 @@ namespace AGS_Tim.windows
         private Game game;
         private Highscore highscore;
         private InputConverter inputConverter;
+        private SettingsPage settingsPage;
 
         public MainWindow()
         {
@@ -71,6 +72,16 @@ namespace AGS_Tim.windows
             }
 
             return this.game;
+        }
+
+        public SettingsPage GetSettingsPage(bool forceRefresh = false)
+        {
+            if (forceRefresh || this.settingsPage == null)
+            {
+                this.settingsPage = new SettingsPage();
+            }
+
+            return this.settingsPage;
         }
 
         public InputConverter ConvertInput(int ButtonNumber, Action<char> Callback)
