@@ -82,7 +82,7 @@ namespace AGS_Tim.windows
 
             this.inputConverter.Callback = Callback;
             this.inputConverter.Current = ButtonNumber;
-            this.inputConverter.StartTimer();
+            this.inputConverter.StartTimer(false);
 
             return this.inputConverter;
         }

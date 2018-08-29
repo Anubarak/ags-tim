@@ -40,7 +40,7 @@ namespace AGS_Tim.windows
 
         public void TimerElapsed(char x)
         {
-            //MessageBox.Show(x.ToString());
+            this.TbName.Text += x;
         }
     }
 }

@@ -58,6 +58,7 @@
             <Run>ihren Namen ein!</Run>
         </TextBlock>
         <TextBox
+            Name="TbName"
             Grid.Row="1"
             Margin="0,280,0,380"
             Background="White"
