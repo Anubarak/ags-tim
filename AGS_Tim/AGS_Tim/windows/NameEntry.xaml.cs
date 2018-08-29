@@ -31,6 +31,9 @@ namespace AGS_Tim.windows
             if (ButtonNumber == 1)
             {
                 Main.mainWindow.Content = Main.mainWindow.GetGame();
+                Main.gameSession = new GameSessions();
+                Main.gameSession.gs.userName = this.TbName.Text;
+
             }
             else
             {
