@@ -107,5 +107,10 @@ namespace AGS_Tim.services
             this.Callback(Character);
         }
 
+        public char GetCharacter()
+        {
+            return this.Character;
+        }
+
     }
 }

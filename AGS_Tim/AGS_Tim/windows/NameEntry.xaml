@@ -68,5 +68,26 @@
             Width="350">
         </TextBox>
 
+        <Border
+            Name="BorderCharacter"
+            Visibility="Hidden"
+            Grid.Row="1"
+            BorderBrush="White"
+            BorderThickness="2"
+            Height="50"
+            Width="50">
+            <Label
+                Name="LblCharacter"
+                Background="Black"
+                Foreground="White"
+                FontSize="25"
+                FontWeight="Bold"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center">
+            </Label>
+        </Border>
+        
     </Grid>
 </Page>
