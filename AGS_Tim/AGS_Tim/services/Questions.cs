@@ -36,11 +36,12 @@ namespace AGS_Tim.services
                 {
                     questionIds.Add(question.id);
                 }
+
                 questionIds.Shuffle();
             }
 
          
-            if(questionIds.Count <= 0 )
+            if(questionIds.Count <= 0)
             {
                 return null; 
             }

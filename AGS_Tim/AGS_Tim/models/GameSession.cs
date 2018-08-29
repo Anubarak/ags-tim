@@ -15,7 +15,6 @@ namespace AGS_Tim.models
     {
 
         public List<Image> playerPictures;
-
         public List<int> playersCompleted;
         public DateTime startTime;
         public DateTime endTime;
@@ -23,7 +22,6 @@ namespace AGS_Tim.models
         public string userName;
         public int points;
         public int level;
-
         public Player[] players;
 
     }

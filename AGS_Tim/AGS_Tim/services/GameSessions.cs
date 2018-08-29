@@ -12,19 +12,15 @@ namespace AGS_Tim.services
 {
     class GameSessions
     {
-
-
         public GameSession gs; 
 
-   
-
+        /// <summary>
+        /// Initiates a new GameSession
+        /// </summary>
         public GameSessions()
-
         {
-
             gs = new GameSession();
-           gs.playerPictures = new List<Image>();
-           gs.players = new Player[6];
+            gs.players = new Player[6];
 
             Random rnd = new Random();
             List<int> usedPlayerIds = new List<int>();
@@ -34,20 +30,23 @@ namespace AGS_Tim.services
             for (int i = 0; i < 6; i++)
             {
                 gs.players[i] = new Player();
-               gs. players[i].GetSubject();
+                gs.players[i].GetSubject();
                 gs.players[i].level = 1; // zum Testen hier muss das Level aus den Einstellungen übernommen werden
-              gs.  players[i].GetQuestion();
-               gs. players[i].PlayerPicture = gs.playerPictures[0];
+                gs.players[i].GetQuestion();
+                gs.players[i].PlayerPicture = gs.playerPictures[0];
 
-               gs. playerPictures.RemoveAt(0);
+                gs. playerPictures.RemoveAt(0);
             }
 
         }
 
 
+        /// <summary>
+        /// Adds the Player Avatars to the Playerpicture List in the gamesession
+        /// </summary>
         void AddPlayerPictures()
         {
-
+            gs.playerPictures = new List<Image>();
             gs.playerPictures.Add(Resources.a_Constanze);
             gs.playerPictures.Add(Resources.a_Fußballspieler);
             gs.playerPictures.Add(Resources.a_Goth);

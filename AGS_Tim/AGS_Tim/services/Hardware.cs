@@ -23,6 +23,11 @@ namespace AGS_Tim.services
             inputControllers.Add(numpad);
             // HopScotch
             HopscotchMat mat = new HopscotchMat();
+            mat.Connected += HWInput_Connected;
+            mat.Disconnected += HWInput_Disconnected;
+            if (mat.Available)
+                availableHWInputs.Add(EHWInput.HopScotch);
+            inputControllers.Add(mat);
             if (availableHWInputs.Count == 0)
                 throw new Exception("No Input Devices found");
             activeController = inputControllers.Find(x => x.hWInputType == availableHWInputs.Max());
