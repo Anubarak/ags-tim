@@ -10,7 +10,7 @@
       d:DesignWidth="1280"
       Title="Menu"
       
-      Background="White">
+      Background="White" Loaded="Page_Loaded">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -42,7 +42,7 @@
             Margin="640,9.8,0,0"
             Grid.Row="1"
             VerticalAlignment="Top"
-            Width="630">
+            Width="630" Source="/AGS_Tim;component/Resources/pixel-classroom.png">
         </Image>
 
         <TextBox
@@ -57,6 +57,7 @@
         </TextBox>
 
         <Image
+            Name="ImgPlayer"
             HorizontalAlignment="Left"
             Height="239"
             Margin="10,9.8,0,0"
@@ -66,6 +67,7 @@
         </Image>
 
         <TextBlock
+            Name="TbQuestion"
             HorizontalAlignment="Left"
             Margin="164,9.8,0,0"
             Grid.Row="1"
@@ -75,6 +77,60 @@
             Width="471"
             FontSize="28">
         </TextBlock>
+
+        <Border
+            Name="BorderTable1"
+            Grid.Row="1" 
+            BorderBrush="Gold"
+            BorderThickness="4"
+            Margin="667,222.8,459,330"
+            Visibility="Hidden">
+        </Border>
+
+        <Border
+            Name="BorderTable2"
+            Grid.Row="1" 
+            BorderBrush="Gold"
+            BorderThickness="4"
+            Margin="882,222.8,244,330"
+            Visibility="Hidden">
+        </Border>
+
+        <Border
+            Name="BorderTable3"
+            Grid.Row="1" 
+            BorderBrush="Gold"
+            BorderThickness="4"
+            Margin="1087,222.8,39,330"
+            Visibility="Hidden">
+        </Border>
+
+        <Border
+            Name="BorderTable4"
+            Grid.Row="1" 
+            BorderBrush="Gold"
+            BorderThickness="4"
+            Margin="667,400.8,459,152"
+            Visibility="Hidden">
+        </Border>
+
+        <Border
+            Name="BorderTable5"
+            Grid.Row="1" 
+            BorderBrush="Gold"
+            BorderThickness="4"
+            Margin="882,400.8,244,152"
+            Visibility="Hidden">
+        </Border>
+
+        <Border
+            Name="BorderTable6"
+            Grid.Row="1" 
+            BorderBrush="Gold"
+            BorderThickness="4"
+            Margin="1087,400.8,39,152"
+            Visibility="Hidden">
+        </Border>
 
     </Grid>
 </Page>
