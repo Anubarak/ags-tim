@@ -14,7 +14,7 @@ namespace AGS_Tim.models
     public class GameSession
     {
 
-        public List<Image> playerPictures;
+        public List<string> playerPictures;
         public List<int> playersCompleted;
         public DateTime startTime;
         public DateTime endTime;

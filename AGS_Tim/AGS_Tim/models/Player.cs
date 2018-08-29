@@ -13,7 +13,7 @@ namespace AGS_Tim.models
     {
         public Question Question;
         public Subject Subject;
-        public Image PlayerPicture;
+        public string PlayerPicture;
         public int level; 
         public string Name; 
 

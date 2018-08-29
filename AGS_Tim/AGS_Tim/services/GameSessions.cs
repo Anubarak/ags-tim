@@ -47,13 +47,13 @@ namespace AGS_Tim.services
         /// </summary>
         void AddPlayerPictures()
         {
-            gs.playerPictures = new List<Image>();
-            gs.playerPictures.Add(Resources.a_Constanze);
-            gs.playerPictures.Add(Resources.a_Fußballspieler);
-            gs.playerPictures.Add(Resources.a_Goth);
-            gs.playerPictures.Add(Resources.a_Hipster);
-            gs.playerPictures.Add(Resources.a_Punk);
-            gs.playerPictures.Add(Resources.a_Schwarzer);
+            gs.playerPictures = new List<string>();
+            gs.playerPictures.Add("Constanze.gif");
+            gs.playerPictures.Add("Fußballspieler.gif");
+            gs.playerPictures.Add("Goth.gif");
+            gs.playerPictures.Add("Hipster.gif");
+            gs.playerPictures.Add("Punk.gif");
+            gs.playerPictures.Add("Schwarzer.gif");
 
             gs.playerPictures.Shuffle();
         }
