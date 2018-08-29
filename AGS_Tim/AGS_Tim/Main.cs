@@ -37,8 +37,8 @@ namespace AGS_Tim
 
             
             //Zum Testen
-            settings.level = 1;
-            settings.SaveSettings(); 
+            //settings.level = 1;
+           //  settings.SaveSettings(); 
             //gameSession = new GameSessions();
             //validate = new Validate(gameSession.gs.players[0]);
             //string a = "";

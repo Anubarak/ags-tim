@@ -14,7 +14,7 @@ namespace AGS_Tim.services
 
         public Validate(Player player)
         {
-            answer = player.Question.correctAnswer;
+            answer = player.Question.correctAnswer.ToLower();
             
         }
 
@@ -25,8 +25,8 @@ namespace AGS_Tim.services
         /// <returns></returns>
         public ValidateAnswerResponse CheckAnswer(string input)
         {
-            string tempAnswer = answer.Substring(0, input.Length);
-            if (input.Equals("") || input == null)
+            string tempAnswer = answer.Substring(0, input.Length).ToLower();
+            if (input.ToLower().Equals("") || input == null)
                 return ValidateAnswerResponse.WrongAnswer;
             else if (answer.Equals(input))
                 return ValidateAnswerResponse.AnswerComplete;
