@@ -68,7 +68,7 @@ namespace AGS_Tim.controllers
                         Disconnected(this, EHWInput.Keyboard);
                 }
                 oldAvailable = Available;
-                Thread.Sleep(5000);
+                Thread.Sleep(1000);
             }
         }
 
