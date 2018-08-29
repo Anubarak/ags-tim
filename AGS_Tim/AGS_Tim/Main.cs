@@ -33,14 +33,15 @@ namespace AGS_Tim
             hardware = new Hardware(mainWindow);
 
             //Zum Testen
+            //settings.level = 15;
+            //settings.SaveSettings(); 
             //gameSession = new GameSessions();
             //validate = new Validate(gameSession.gs.players[0]);
             //string a = "";
             //validate.CheckAnswer(a);
 
-            //settings.level = 15;
-            //settings.SaveSettings(); 
-            
+
+
 
         }
     }

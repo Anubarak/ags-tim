@@ -31,7 +31,7 @@ namespace AGS_Tim.services
             {
                 gs.players[i] = new Player();
                 gs.players[i].GetSubject();
-                gs.players[i].level = 1; // zum Testen hier muss das Level aus den Einstellungen übernommen werden
+                gs.players[i].level = Main.settings.level; 
                 gs.players[i].GetQuestion();
                 gs.players[i].PlayerPicture = gs.playerPictures[0];
 

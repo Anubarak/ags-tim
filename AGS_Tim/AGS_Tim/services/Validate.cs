@@ -18,6 +18,11 @@ namespace AGS_Tim.services
             
         }
 
+        /// <summary>
+        /// Checks if Answer is answered, coreerct, wrong
+        /// </summary>
+        /// <param name="input">Complete Input String</param>
+        /// <returns></returns>
         public ValidateAnswerResponse CheckAnswer(string input)
         {
             string tempAnswer = answer.Substring(0, input.Length);

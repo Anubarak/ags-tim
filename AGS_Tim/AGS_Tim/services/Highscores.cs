@@ -15,16 +15,39 @@ namespace AGS_Tim.services
         /// Writes Highscore to Database
         /// </summary>
         /// <returns></returns>
-        public bool WriteHighscore()
+        public void WriteHighscore()
         {
-            Highscore hs = new Highscore();
-            hs.dateCreated = DateTime.Now;
-            hs.level = Main.gameSession.gs.level;
-            hs.name = Main.gameSession.gs.userName;
-            hs.points = Main.gameSession.gs.points;
-            hs.timer = Main.gameSession.gs.endTime - Main.gameSession.gs.startTime; 
-           
-            return true;
+            Highscore hs = new Highscore
+            {
+                dateCreated = DateTime.Now,
+                level = Main.gameSession.gs.level,
+                name = Main.gameSession.gs.userName,
+                points = Main.gameSession.gs.points,
+                timer = Main.gameSession.gs.endTime - Main.gameSession.gs.startTime
+            };
+
+            Main.db.dbConnection.Insert(hs);
+
         }
+
+        /// <summary>
+        /// Returns a List with all Highscores
+        /// </summary>
+        /// <returns> List with Highscores</returns>
+        public List<Highscore> ReadHighscores()
+        {
+            List<Highscore> hs = new List<Highscore>(); 
+           var tempHighscore =  Main.db.dbConnection.Table<Highscore>();
+
+            foreach(var score in tempHighscore)
+            {
+                hs.Add(score);
+            }
+            return hs; 
+        }
+
     }
+
+
+  
 }

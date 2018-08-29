@@ -27,9 +27,12 @@ namespace AGS_Tim.services
         /// </summary>
         public void SaveSettings()
         {
-            Setting tempSetting = new Setting();
-            tempSetting.id = 1; 
-            tempSetting.level = level;
+            Setting tempSetting = new Setting
+            {
+                id = 1,
+                level = level
+            };
+
             var tempSettings = Main.db.dbConnection.Update(tempSetting);
         }
 

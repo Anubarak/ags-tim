@@ -24,8 +24,6 @@ namespace AGS_Tim.services
         {
             Question newQuestion;
             Random rnd = new Random();
-            int randomQuestionId;
-            int questionCounter = 0;
 
             //table with all Questions of the subject
             var tempQuestions =  Main.db.dbConnection.Table<Question>().Where(v => (v.subjectId.Equals(Subject)) && (v.level == level));
