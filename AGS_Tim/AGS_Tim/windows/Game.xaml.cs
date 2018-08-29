@@ -39,31 +39,46 @@ namespace AGS_Tim.windows
             this.DataContext = this.activePlayer;
         }
 
+        /// <summary>
+        /// handles the Button Pressed Event
+        /// </summary>
+        /// <param name="ButtonNumber"></param>
         public void ButtonPressed(int ButtonNumber)
         {
-            if (IsAnswering)
+            if (IsAnswering) // Answering the Question
             {
-                Main.validate = new Validate(activePlayer);
-
-                // Hier der Code hin der den Text in die Textbox bringt
                 Action<char> action = new Action<char>(TimerElapsed);
-
                 InputConverter inputConverter = Main.mainWindow.ConvertInput(ButtonNumber, action);
                 this.BorderCharacter.Visibility = Visibility.Visible;
                 this.LblCharacter.Content = inputConverter.GetCharacter();
 
             }
-            else
+            else //Player Selection
             {
+                //Confirming Player Selection
                 if (ButtonNumber == 1) {
-                    this.IsAnswering = true;
 
-                    activePlayer =  Main.gameSession.gs.players[CurrentTable - 1];
-                    this.TbQuestion.Text = activePlayer.Question.text;
-                    this.ImgPlayer.Source = new BitmapImage(new Uri("pack://application:,,,/Pictures/" + activePlayer.PlayerPicture));
-                    ImageBehavior.SetAnimatedSource(ImgPlayer, ImgPlayer.Source);
-                    this.ImgPlayer.Visibility = Visibility.Visible;
+
+                    //Checks if Player was already Played
+                    if (!Main.gameSession.gs.playersCompleted.Contains(Main.gameSession.gs.players[CurrentTable - 1].ID))
+                    {
+                        this.IsAnswering = true;
+                        activePlayer = Main.gameSession.gs.players[CurrentTable - 1];
+                        this.TbQuestion.Text = activePlayer.Question.text;
+                        this.ImgPlayer.Source = new BitmapImage(new Uri("pack://application:,,,/Pictures/" + activePlayer.PlayerPicture));
+                        ImageBehavior.SetAnimatedSource(ImgPlayer, ImgPlayer.Source);
+                        this.ImgPlayer.Visibility = Visibility.Visible;
+                        Main.validate = new Validate(activePlayer);
+                    }
+                    else
+                    {
+                        // Hier hin was passieren soll wenn der Player schon gespielt wurde
+                    }
+                 
                 }
+
+                // Selecting player with gamepad
+                // UP AND DOWN
                 else if (ButtonNumber == 2 || ButtonNumber == 8)
                 {
                     switch (CurrentTable)
@@ -88,6 +103,7 @@ namespace AGS_Tim.windows
                             break;
                     }
                 }
+                //LEFT
                 else if (ButtonNumber == 4)
                 {
                     switch (CurrentTable)
@@ -112,6 +128,7 @@ namespace AGS_Tim.windows
                             break;
                     }
                 }
+                //RIGHT
                 else if (ButtonNumber == 6)
                 {
                     switch (CurrentTable)
@@ -139,6 +156,10 @@ namespace AGS_Tim.windows
             }
         }
 
+        /// <summary>
+        /// Sets the border around the selected Player to visible
+        /// </summary>
+        /// <param name="activate"></param>
         private void ChangeTable(int activate)
         {
             DeactivateTable();
@@ -166,6 +187,10 @@ namespace AGS_Tim.windows
             }
         }
 
+
+        /// <summary>
+        /// deactivates the Border around the Player
+        /// </summary>
         private void DeactivateTable()
         {
             this.BorderTable1.Visibility = Visibility.Hidden;
@@ -183,6 +208,11 @@ namespace AGS_Tim.windows
             this.BorderTable1.Visibility = Visibility.Visible;
         }
 
+
+        /// <summary>
+        /// Is Triggered when the Timer of the Input elapsed, Checks if the Answer is correct
+        /// </summary>
+        /// <param name="x"></param>
         public void TimerElapsed(char x)
         {
 
@@ -194,30 +224,70 @@ namespace AGS_Tim.windows
             }
             else if (Main.validate.CheckAnswer(answerInput) == ValidateAnswerResponse.AnswerComplete)
             {
-             //   Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
-                TbAnswer.Text = "";
-                TbQuestion.Text = "";
-                answerInput = "";
-                this.ImgPlayer.Visibility = Visibility.Hidden;
-                this.ImgPlayer.Source = null;
-                ImageBehavior.SetAnimatedSource(ImgPlayer,null);
-
-                // zurück in den anderen Modus
-                IsAnswering = false;
+                Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
+                if (CheckIfGameIsOver())
+                {
+                    EndGameSession();
+                }
+                else
+                {
+                    ResetWindow();
+                    IsAnswering = false;
+                }
+              
             }
             else if (Main.validate.CheckAnswer(answerInput) == ValidateAnswerResponse.CorrectAnswer)
             {
-
+                Main.gameSession.gs.wrongAnswerCounter += 1; 
             }
 
 
             this.TbAnswer.Text = answerInput;
             this.LblCharacter.Content = "";
             this.BorderCharacter.Visibility = Visibility.Hidden;
+        }
 
 
-           
+        /// <summary>
+        /// Cheks if all 6 Players have been played
+        /// </summary>
+        /// <returns></returns>
+        private bool CheckIfGameIsOver()
+        {
+            Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
 
+            if (Main.gameSession.gs.playersCompleted.Count() >= 6)
+                return true;
+    
+            else
+
+            return false;
+        }
+
+        /// <summary>
+        /// Handles what happens when a gamesession ends,  Writes Highscore to database
+        /// </summary>
+        private void EndGameSession()
+        {
+            Main.gameSession.gs.endTime = DateTime.Now;
+         
+
+            ResetWindow();
+            Main.highscores.WriteHighscore();
+        }
+
+
+        /// <summary>
+        /// Resetts the Window Controls used in Answering Questions
+        /// </summary>
+        private void ResetWindow()
+        {
+            TbAnswer.Text = "";
+            TbQuestion.Text = "";
+            answerInput = "";
+            this.ImgPlayer.Visibility = Visibility.Hidden;
+            this.ImgPlayer.Source = null;
+            ImageBehavior.SetAnimatedSource(ImgPlayer, null);
         }
     }
 }

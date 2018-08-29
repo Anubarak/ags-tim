@@ -15,7 +15,7 @@ namespace AGS_Tim.models
     {
 
         public List<string> playerPictures;
-        public List<int> playersCompleted;
+        public List<int> playersCompleted = new List<int>();
         public DateTime startTime;
         public DateTime endTime;
         public int inputType;

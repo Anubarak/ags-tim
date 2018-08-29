@@ -22,7 +22,7 @@ namespace AGS_Tim.services
                 dateCreated = DateTime.Now,
                 level = Main.gameSession.gs.level,
                 name = Main.gameSession.gs.userName,
-                points = Main.gameSession.gs.points,
+                points = GetPoints(),
                 timer = Main.gameSession.gs.endTime - Main.gameSession.gs.startTime
             };
 
@@ -47,6 +47,10 @@ namespace AGS_Tim.services
         }
 
 
+        /// <summary>
+        /// Calculates Points from time and Wrong answers
+        /// </summary>
+        /// <returns>Number of Points</returns>
         private int GetPoints()
         {
             GameSession gs = Main.gameSession.gs;
