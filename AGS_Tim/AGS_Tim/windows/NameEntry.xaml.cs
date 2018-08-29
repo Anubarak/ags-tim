@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AGS_Tim.services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,13 +35,18 @@ namespace AGS_Tim.windows
             else
             {
                 Action<char> action = new Action<char>(TimerElapsed);
-                Main.mainWindow.ConvertInput(ButtonNumber, action);
+                
+                InputConverter inputConverter = Main.mainWindow.ConvertInput(ButtonNumber, action);
+                this.BorderCharacter.Visibility = Visibility.Visible;
+                this.LblCharacter.Content = inputConverter.GetCharacter();
             }
         }
 
         public void TimerElapsed(char x)
         {
             this.TbName.Text += x;
+            this.LblCharacter.Content = "";
+            this.BorderCharacter.Visibility = Visibility.Hidden;
         }
     }
 }
