@@ -42,7 +42,8 @@
             Margin="640,9.8,0,0"
             Grid.Row="1"
             VerticalAlignment="Top"
-            Width="630" Source="/AGS_Tim;component/Resources/pixel-classroom.png">
+            Width="630"
+            Source="/AGS_Tim;component/Resources/pixel-classroom.png">
         </Image>
 
         <TextBox
