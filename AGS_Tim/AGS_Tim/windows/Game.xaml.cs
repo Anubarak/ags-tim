@@ -17,6 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using AGS_Tim.models;
 using WpfAnimatedGif;
+using AGS_Tim.services;
 
 namespace AGS_Tim.windows
 {
@@ -29,6 +30,7 @@ namespace AGS_Tim.windows
         int CurrentTable = 1;
         Player activePlayer;
         
+        
 
         public Game()
         {
@@ -40,7 +42,31 @@ namespace AGS_Tim.windows
         {
             if (IsAnswering)
             {
-                
+                Main.validate = new Validate(activePlayer);
+
+                // Hier der Code hin der den Text in die Textbox bringt
+                Action<char> action = new Action<char>(TimerElapsed);
+
+                InputConverter inputConverter = Main.mainWindow.ConvertInput(ButtonNumber, action);
+                this.BorderCharacter.Visibility = Visibility.Visible;
+                this.LblCharacter.Content = inputConverter.GetCharacter();
+
+
+                //if (Main.validate.CheckAnswer(TbAnswer.Text) == ValidateAnswerResponse.WrongAnswer)
+                //{
+                //    TbAnswer.Text = TbAnswer.Text.Remove(0, TbAnswer.Text.Count());
+                //}
+                //else if (Main.validate.CheckAnswer(TbAnswer.Text) == ValidateAnswerResponse.AnswerComplete)
+                //{
+                //    // Methode die den Spieler auf gelöst setzt
+
+
+                //    // zurück in den anderen Modus
+                //    IsAnswering = false;
+                //}
+
+
+
             }
             else
             {
@@ -169,6 +195,17 @@ namespace AGS_Tim.windows
             Main.gameSession.gs.startTime = DateTime.Now;
 
             this.BorderTable1.Visibility = Visibility.Visible;
+        }
+
+        public void TimerElapsed(char x)
+        {
+            this.TbAnswer.Text += x;
+            this.LblCharacter.Content = "";
+            this.BorderCharacter.Visibility = Visibility.Hidden;
+
+
+           
+
         }
     }
 }

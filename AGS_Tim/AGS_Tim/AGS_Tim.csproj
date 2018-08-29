@@ -212,7 +212,7 @@
     <Resource Include="Pictures\Goth.gif" />
     <Resource Include="Pictures\Hipster.gif" />
     <Resource Include="Pictures\Lehrer.gif" />
-    <Resource Include="Pictures\Neger.gif" />
+    <Resource Include="Pictures\Schwarzer.gif" />
     <Resource Include="Pictures\Punk.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

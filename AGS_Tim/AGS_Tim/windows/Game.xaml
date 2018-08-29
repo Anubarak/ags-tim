@@ -47,6 +47,7 @@
         </Image>
 
         <TextBox
+            Name="TbAnswer"
             HorizontalAlignment="Left"
             Height="35"
             Margin="10,651.8,0,0"
@@ -67,6 +68,8 @@
             Width="149">
         </Image>
 
+        
+        
         <TextBlock
             Name="TbQuestion"
             HorizontalAlignment="Left"
@@ -135,5 +138,26 @@
             Visibility="Hidden">
         </Border>
 
+        <Border
+            Name="BorderCharacter"
+            Visibility="Hidden"
+            Grid.Row="1"
+            BorderBrush="White"
+            BorderThickness="2"
+            Height="50"
+            Width="50"
+            Margin="-650,555.8,0,0">
+            <Label
+                Name="LblCharacter"
+                Background="Black"
+                Foreground="White"
+                FontSize="25"
+                FontWeight="Bold"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center">
+            </Label>
+        </Border>
     </Grid>
 </Page>
