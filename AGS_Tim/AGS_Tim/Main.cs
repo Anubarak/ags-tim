@@ -32,12 +32,13 @@ namespace AGS_Tim
             mainWindow = new MainWindow();
             hardware = new Hardware(mainWindow);
 
+
             settings.LoadSettings();
 
             
             //Zum Testen
-            //settings.level = 15;
-            //settings.SaveSettings(); 
+            settings.level = 1;
+            settings.SaveSettings(); 
             //gameSession = new GameSessions();
             //validate = new Validate(gameSession.gs.players[0]);
             //string a = "";
