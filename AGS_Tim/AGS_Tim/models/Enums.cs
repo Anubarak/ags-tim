@@ -7,6 +7,9 @@
         HopScotch = 1
     }
 
+    /// <summary>
+    /// Represents the responses when checking an answer
+    /// </summary>
     public enum ValidateAnswerResponse
     {
         WrongAnswer = 0,

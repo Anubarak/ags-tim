@@ -11,10 +11,13 @@ namespace AGS_Tim.services
 {
     class Highscores
     {
+        /// <summary>
+        /// Writes Highscore to Database
+        /// </summary>
+        /// <returns></returns>
         public bool WriteHighscore()
         {
             Highscore hs = new Highscore();
-
             hs.dateCreated = DateTime.Now;
             hs.level = Main.gameSession.gs.level;
             hs.name = Main.gameSession.gs.userName;

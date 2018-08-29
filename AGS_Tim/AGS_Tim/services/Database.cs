@@ -16,13 +16,14 @@ namespace AGS_Tim.services
         private string databasePath; 
         public SQLiteConnection dbConnection;
 
+        /// <summary>
+        /// Inititaes a new Database Connection
+        /// </summary>
         public Database()
         {
             databasePath = Path.Combine(Environment.CurrentDirectory, "TIM.db");
             dbConnection = new SQLiteConnection(databasePath);
-
         }
-
 
     }
 
