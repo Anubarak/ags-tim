@@ -13,7 +13,7 @@ namespace AGS_Tim.services
     class Questions
     {
 
-        List<int> questionIds = new List<int>();
+      
 
         /// <summary>
         /// Returns a random question according to subject
@@ -22,6 +22,7 @@ namespace AGS_Tim.services
         /// <returns>Random Question</returns>
         public Question GetNewQuestion(int Subject, int level)
         {
+            List<int> questionIds = new List<int>();
             Question newQuestion;
             Random rnd = new Random();
 
