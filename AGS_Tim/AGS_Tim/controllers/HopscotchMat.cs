@@ -108,7 +108,9 @@ namespace AGS_Tim.controllers
                                     j = 9;
                                     break;
 
-                                default: continue;
+                                default:
+
+                                    continue;
                             }
                             pressedList.Add(j);
                             break;
@@ -127,7 +129,7 @@ namespace AGS_Tim.controllers
                     // throwing for future implementation use
                     throw ex;
                 }
-                Thread.Sleep(100);
+                Thread.Sleep(50);
             }
         }
 
