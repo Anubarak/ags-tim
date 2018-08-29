@@ -12,22 +12,12 @@ namespace AGS_Tim.services
     {
         private string answer = ""; 
 
-
-        /// <summary>
-        /// initialte new Validate Service
-        /// </summary>
-        /// <param name="player"> Player which is currently played agaunst</param>
         public Validate(Player player)
         {
             answer = player.Question.correctAnswer;
             
         }
 
-        /// <summary>
-        /// Compares a String with the Correct Answer
-        /// </summary>
-        /// <param name="input">String to check against the correct answer</param>
-        /// <returns>Response if answer is wrong, correct, complete</returns>
         public ValidateAnswerResponse CheckAnswer(string input)
         {
             string tempAnswer = answer.Substring(0, input.Length);

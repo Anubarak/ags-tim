@@ -89,6 +89,12 @@ namespace AGS_Tim.windows
 
         public void ButtonPressed(object sender, int ButtonNumber)
         {
+            Action<int> action = new Action<int>(handleButtonPressed);
+            this.Dispatcher.Invoke(action, ButtonNumber);
+        }
+
+        private void handleButtonPressed(int ButtonNumber)
+        {
             if (this.Content.GetType() == typeof(Menu))
             {
                 this.menu.ButtonPressed(ButtonNumber);
@@ -109,6 +115,7 @@ namespace AGS_Tim.windows
             {
                 MessageBox.Show("Fehler");
             }
+
         }
     }
 }
