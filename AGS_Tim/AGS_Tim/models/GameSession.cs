@@ -23,6 +23,7 @@ namespace AGS_Tim.models
         public int points;
         public int level;
         public Player[] players;
+        public int wrongAnswerCounter; 
 
     }
 }
