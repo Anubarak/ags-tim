@@ -60,7 +60,7 @@ namespace AGS_Tim.models
             playerPictures.Add(Resources.a_Fußballspieler);
             playerPictures.Add(Resources.a_Goth);
             playerPictures.Add(Resources.a_Hipster);
-            playerPictures.Add(Resources.a_Lehrer);
+            playerPictures.Add(Resources.Lehrer);
             playerPictures.Add(Resources.a_Punk);
             playerPictures.Add(Resources.a_Schwarzer);
 

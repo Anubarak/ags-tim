@@ -103,16 +103,6 @@ namespace AGS_Tim.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap a_Lehrer {
-            get {
-                object obj = ResourceManager.GetObject("a_Lehrer", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap a_Punk {
             get {
                 object obj = ResourceManager.GetObject("a_Punk", resourceCulture);
@@ -126,6 +116,16 @@ namespace AGS_Tim.Properties {
         internal static System.Drawing.Bitmap a_Schwarzer {
             get {
                 object obj = ResourceManager.GetObject("a_Schwarzer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lehrer {
+            get {
+                object obj = ResourceManager.GetObject("Lehrer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

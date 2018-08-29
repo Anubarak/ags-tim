@@ -130,14 +130,14 @@
   <data name="a_Hipster" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_Hipster.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="a_Lehrer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\a_Lehrer.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="a_Punk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_Punk.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="a_Schwarzer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_Schwarzer.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lehrer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\a_Lehrer.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tafel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tafel.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
