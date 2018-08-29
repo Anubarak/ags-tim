@@ -110,6 +110,7 @@
     <Compile Include="models\QuestionType.cs" />
     <Compile Include="models\Subject.cs" />
     <Compile Include="services\Database.cs" />
+    <Compile Include="services\GameSessions.cs" />
     <Compile Include="services\Hardware.cs" />
     <Compile Include="services\Highscores.cs" />
     <Compile Include="services\InputConverter.cs" />
