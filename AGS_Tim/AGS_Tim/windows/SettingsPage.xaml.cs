@@ -16,13 +16,21 @@ using System.Windows.Shapes;
 namespace AGS_Tim.windows
 {
     /// <summary>
-    /// Interaction logic for Settings.xaml
+    /// Interaction logic for SettingsPage.xaml
     /// </summary>
-    public partial class Settings : Page
+    public partial class SettingsPage : Page
     {
-        public Settings()
+        public SettingsPage()
         {
             InitializeComponent();
+        }
+
+        public void ButtonPressed(int ButtonNumber)
+        {
+            if (ButtonNumber == 1)
+            {
+                Main.mainWindow.Content = Main.mainWindow.getMenu();
+            }
         }
     }
 }

@@ -27,7 +27,10 @@ namespace AGS_Tim.windows
 
         public void ButtonPressed(int ButtonNumber)
         {
-
+            if (ButtonNumber == 1)
+            {
+                Main.mainWindow.Content = Main.mainWindow.getMenu();
+            }
         }
     }
 }
