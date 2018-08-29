@@ -122,6 +122,10 @@ namespace AGS_Tim.windows
             {
                 this.highscore.ButtonPressed(ButtonNumber);
             }
+            else if (this.Content.GetType() == typeof(SettingsPage))
+            {
+                this.settingsPage.ButtonPressed(ButtonNumber);
+            }
             else
             {
                 MessageBox.Show("Fehler");
