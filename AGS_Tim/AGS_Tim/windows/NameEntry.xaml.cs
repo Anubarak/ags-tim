@@ -60,7 +60,7 @@ namespace AGS_Tim.windows
         {
             if (deleteCharacter)
             {
-                if(!this.TbName.Equals("") && this.TbName != null)
+                if(!String.IsNullOrEmpty(TbName.Text))
                 {
                     this.TbName.Text = this.TbName.Text.Remove(this.TbName.Text.Length - 1, 1);
                 }
