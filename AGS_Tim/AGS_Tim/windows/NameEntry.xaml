@@ -34,16 +34,16 @@
         </Label>
 
         <TextBlock
-            Grid.Row="1"
-            Margin="0,120,0,490"
+            Margin="399,109,399,459"
             FontSize="25"
             FontWeight="Bold"
             Foreground="White"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            TextAlignment="Center">
+            TextAlignment="Center" Height="152">
             <Run>Bitte geben Sie</Run> <LineBreak/> 
-            <Run>ihren Namen ein!</Run>
+            <Run>ihren Namen ein!</Run> <LineBreak/> <LineBreak/>
+            <Run>1 = bestätigen, 2mal 1 = Zeichen löschen</Run>
         </TextBlock>
         <TextBox
             Name="TbName"
@@ -78,6 +78,6 @@
                 VerticalContentAlignment="Center">
             </Label>
         </Border>
-        
+
     </Grid>
 </Page>
