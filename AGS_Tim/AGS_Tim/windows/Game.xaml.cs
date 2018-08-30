@@ -236,8 +236,9 @@ namespace AGS_Tim.windows
                     ResetWindow();
                     IsAnswering = false;
 
-                    TbQuestion.Text = "Das war die Richtige Antwort!/nWähle den nächsten Schüler den du helfen möchtest!";
-                    this.ImgPlayer.Source = new BitmapImage(new Uri("pack://application:,,,/Pictures/CheckMark.png"));
+                    TbQuestion.Text = "\n\nDas war die Richtige Antwort!\nWähle den nächsten Schüler den du helfen möchtest!";
+                   
+                   this.ImgPlayer.Source = new BitmapImage(new Uri("pack://application:,,,/Pictures/CheckMark.png"));
                     ImageBehavior.SetAnimatedSource(ImgPlayer, ImgPlayer.Source);
                     this.ImgPlayer.Visibility = Visibility.Visible;
 
@@ -262,8 +263,7 @@ namespace AGS_Tim.windows
         /// <returns></returns>
         private bool CheckIfGameIsOver()
         {
-            Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
-
+        
             if (Main.gameSession.gs.playersCompleted.Count() >= 6)
             
 
@@ -283,7 +283,13 @@ namespace AGS_Tim.windows
             ResetWindow();
             Main.highscores.WriteHighscore();
 
+            TbQuestion.Text = "Herzlichen Glückwunsch!\nDu hast alle Aufgaben gelöst! Du kann das Nachsitzen verlassen.\n\nZurück zum Hauptmenü mit 1\nBeenden mit 2";
+            TbQuestion.Text += "\nZeit = " + (Main.gameSession.gs.endTime - Main.gameSession.gs.endTime).ToString();
+            TbQuestion.Text += "\nZeit = " + Main.gameSession.gs.points;
 
+            this.ImgPlayer.Source = new BitmapImage(new Uri("pack://application:,,,/Pictures/Trophy.png"));
+            ImageBehavior.SetAnimatedSource(ImgPlayer, ImgPlayer.Source);
+            this.ImgPlayer.Visibility = Visibility.Visible;
         }
 
 

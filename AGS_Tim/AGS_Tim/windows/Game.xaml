@@ -79,7 +79,7 @@
             TextWrapping="Wrap"
             Text=""
             VerticalAlignment="Top"
-            Height="239"
+            Height="400"
             Width="471"
             FontSize="28">
         </TextBlock>
