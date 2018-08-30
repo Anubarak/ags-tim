@@ -54,7 +54,7 @@ namespace AGS_Tim.services
         /// Calculates Points from time and Wrong answers
         /// </summary>
         /// <returns>Number of Points</returns>
-        private int GetPoints()
+        public int GetPoints()
         {
             GameSession gs = Main.gameSession.gs;
             int totalPoints = 0;

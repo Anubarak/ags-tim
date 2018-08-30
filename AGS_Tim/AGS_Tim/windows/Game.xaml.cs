@@ -226,6 +226,12 @@ namespace AGS_Tim.windows
             else if (Main.validate.CheckAnswer(answerInput) == ValidateAnswerResponse.AnswerComplete)
             {
                 Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
+                Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
+                Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
+                Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
+                Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
+                Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
+
                 if (CheckIfGameIsOver())
                 {
                     EndGameSession();
@@ -284,8 +290,8 @@ namespace AGS_Tim.windows
             Main.highscores.WriteHighscore();
 
             TbQuestion.Text = "Herzlichen Glückwunsch!\nDu hast alle Aufgaben gelöst! Du kann das Nachsitzen verlassen.\n\nZurück zum Hauptmenü mit 1\nBeenden mit 2";
-            TbQuestion.Text += "\nZeit = " + (Main.gameSession.gs.endTime - Main.gameSession.gs.endTime).ToString();
-            TbQuestion.Text += "\nZeit = " + Main.gameSession.gs.points;
+            TbQuestion.Text += "\nZeit = " + Main.gameSession.gs.endTime.Subtract(Main.gameSession.gs.startTime).ToString("mm':'ss");
+            TbQuestion.Text += "\nPunkte = " + Main.highscores.GetPoints();
 
             this.ImgPlayer.Source = new BitmapImage(new Uri("pack://application:,,,/Pictures/Trophy.png"));
             ImageBehavior.SetAnimatedSource(ImgPlayer, ImgPlayer.Source);
