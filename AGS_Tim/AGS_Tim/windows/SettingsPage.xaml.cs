@@ -31,6 +31,36 @@ namespace AGS_Tim.windows
             {
                 Main.mainWindow.Content = Main.mainWindow.getMenu();
             }
+            else if (ButtonNumber == 2)
+            {
+                if (this.RbEasy.IsChecked == true)
+                {
+                    this.RbHard.IsChecked = true;
+                }
+                else if (RbMedium.IsChecked == true)
+                {
+                    this.RbEasy.IsChecked = true;
+                }
+                else
+                {
+                    this.RbMedium.IsChecked = true;
+                }
+            }
+            else if (ButtonNumber == 8)
+            {
+                if (this.RbEasy.IsChecked == true)
+                {
+                    this.RbMedium.IsChecked = true;
+                }
+                else if (RbMedium.IsChecked == true)
+                {
+                    this.RbHard.IsChecked = true;
+                }
+                else
+                {
+                    this.RbEasy.IsChecked = true;
+                }
+            }
         }
     }
 }

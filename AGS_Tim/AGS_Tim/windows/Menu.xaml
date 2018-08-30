@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:AGS_Tim.windows"
       mc:Ignorable="d" 
       
-       d:DesignHeight="720"
+      d:DesignHeight="720"
       d:DesignWidth="1280"
       Title="Menu"
       
@@ -93,14 +93,57 @@
                 Background="Transparent"
                 Height="7">
             </Separator>
-            <Button 
+
+            <Button
                 Background="White"
                 BorderBrush="Black"
                 FontSize="22"
                 Content="Beenden"
-                Width="250">
+                Width="250"
+                HorizontalContentAlignment="Center">
             </Button>
+
         </StackPanel>
+
+        <TextBlock
+            Grid.Row="1"
+            Foreground="Black"
+            Background="Transparent"
+            Text="1"
+            FontSize="25"
+            FontWeight="Bold"
+            Margin="521,279.8,741,384">
+        </TextBlock>
+
+        <TextBlock
+            Grid.Row="1"
+            Foreground="Black"
+            Background="Transparent"
+            Text="2"
+            FontSize="25"
+            FontWeight="Bold"
+            Margin="521,324.8,741,339">
+        </TextBlock>
+
+        <TextBlock
+            Grid.Row="1"
+            Foreground="Black"
+            Background="Transparent"
+            Text="3"
+            FontSize="25"
+            FontWeight="Bold"
+            Margin="521,369.8,741,294">
+        </TextBlock>
+
+        <TextBlock
+            Grid.Row="1"
+            Foreground="Black"
+            Background="Transparent"
+            Text="4"
+            FontSize="25"
+            FontWeight="Bold"
+            Margin="521,413.8,741,250">
+        </TextBlock>
 
     </Grid>
 </Page>
