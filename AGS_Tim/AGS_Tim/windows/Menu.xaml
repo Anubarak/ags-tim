@@ -34,15 +34,21 @@
         </Label>
 
         <TextBlock
-            Margin="474,174,474,436"
+            Margin="200,120,200,319"
             FontSize="25"
             FontWeight="Bold"
             Foreground="White"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             TextAlignment="Center">
-            <Run>Dies ist ein Einleitungstext,</Run> <LineBreak/> 
-            <Run>welcher die Situation erklärt</Run>
+            <Run>Einmal mehr muss Tim in der Schule mit seinen Freunden nachsitzen.</Run> <LineBreak/> 
+            <Run>Um in die Freiheit zu entkommen, müssen alle Schüler ihre</Run> <LineBreak/>
+            <Run>Aufgaben lösen.</Run> <LineBreak/>
+            <Run>Leider haben seine Freunde große Probleme mit den Aufgaben und</Run> <LineBreak/>
+            <Run>bitten Tim um Hilfe.</Run> <LineBreak/>
+            <Run>Für Tim bedeutet das:</Run> <LineBreak/>
+            <Run></Run><LineBreak/>
+            <Run>(T)OLL, (I)CH (M)ACHS</Run>
         </TextBlock>
         <StackPanel
             Margin="0,432,0,78"
