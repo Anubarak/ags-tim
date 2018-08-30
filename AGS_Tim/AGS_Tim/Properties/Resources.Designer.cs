@@ -63,15 +63,6 @@ namespace AGS_Tim.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _105_rival_appears {
-            get {
-                return ResourceManager.GetStream("_105_rival_appears", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
-        /// </summary>
         internal static System.IO.UnmanagedMemoryStream _108_victory__vs_wild_pokemon_ {
             get {
                 return ResourceManager.GetStream("_108_victory__vs_wild_pokemon_", resourceCulture);
@@ -105,6 +96,15 @@ namespace AGS_Tim.Properties {
             get {
                 object obj = ResourceManager.GetObject("Rahmen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream rival_appears {
+            get {
+                return ResourceManager.GetStream("rival_appears", resourceCulture);
             }
         }
         

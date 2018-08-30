@@ -34,7 +34,7 @@ namespace AGS_Tim.windows
         bool gameOver = false;
 
         System.Media.SoundPlayer bgMusic = new System.Media.SoundPlayer(Properties.Resources.Tim_sound);
-        System.Media.SoundPlayer playerMusic = new System.Media.SoundPlayer(Properties.Resources._105_rival_appears);
+        System.Media.SoundPlayer playerMusic = new System.Media.SoundPlayer(Properties.Resources.rival_appears);
         System.Media.SoundPlayer victoryMusic = new System.Media.SoundPlayer(Properties.Resources._108_victory__vs_wild_pokemon_);
 
         public Game()
