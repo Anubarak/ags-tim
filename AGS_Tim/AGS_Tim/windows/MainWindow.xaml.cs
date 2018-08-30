@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,6 +21,21 @@ namespace AGS_Tim.windows
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        /// <summary> Interop method for finding Windowhandles </summary>
+        /// <param name="className"></param>
+        /// <param name="windowText"></param>
+        /// <returns></returns>
+        [DllImport("user32.dll")]
+        private static extern int FindWindow(string className, string windowText);
+
+        /// <summary> Interop method for showing windows</summary>
+        /// <param name="hwnd"></param>
+        /// <param name="command"></param>
+        /// <returns></returns>
+        [DllImport("user32.dll")]
+        private static extern int ShowWindow(int hwnd, int command);
+
         private Menu menu;
         private NameEntry nameEntry;
         private Game game;
@@ -27,30 +43,33 @@ namespace AGS_Tim.windows
         private InputConverter inputConverter;
         private SettingsPage settingsPage;
 
+        ~MainWindow()
+        {
+            ShowWindow(FindWindow("Shell_TrayWnd", ""), 1);
+        }
+
         public MainWindow()
         {
             InitializeComponent();
-
+            int operation = 0;
+            ShowWindow(FindWindow("Shell_TrayWnd", ""), operation);
             this.Content = this.getMenu();
         }
 
-        public Menu getMenu(bool forceRefresh = false)
+        public Menu getMenu()
         {
-            if (forceRefresh || this.menu == null)
-            {
+         
                 this.menu = new Menu();
-            }
+         
 
             return this.menu;
         }
 
         public NameEntry GetNameEntry(bool forceRefresh = false)
         {
-            if (forceRefresh || this.nameEntry == null)
-            {
-                this.nameEntry = new NameEntry();
-            }
 
+                this.nameEntry = new NameEntry();
+        
             return this.nameEntry;
         }
 
@@ -66,10 +85,9 @@ namespace AGS_Tim.windows
 
         public Game GetGame(bool forceRefresh = false)
         {
-            if (forceRefresh || this.game == null)
-            {
+        
                 this.game = new Game();
-            }
+            
 
             return this.game;
         }
