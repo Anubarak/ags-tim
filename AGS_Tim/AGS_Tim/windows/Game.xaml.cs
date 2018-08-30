@@ -51,6 +51,7 @@ namespace AGS_Tim.windows
                 InputConverter inputConverter = Main.mainWindow.ConvertInput(ButtonNumber, action);
                 this.BorderCharacter.Visibility = Visibility.Visible;
                 this.LblCharacter.Content = inputConverter.GetCharacter();
+                
 
             }
             else //Player Selection
@@ -234,6 +235,12 @@ namespace AGS_Tim.windows
                 {
                     ResetWindow();
                     IsAnswering = false;
+
+                    TbQuestion.Text = "Das war die Richtige Antwort!/nWähle den nächsten Schüler den du helfen möchtest!";
+                    this.ImgPlayer.Source = new BitmapImage(new Uri("pack://application:,,,/Pictures/CheckMark.png"));
+                    ImageBehavior.SetAnimatedSource(ImgPlayer, ImgPlayer.Source);
+                    this.ImgPlayer.Visibility = Visibility.Visible;
+
                 }
               
             }
