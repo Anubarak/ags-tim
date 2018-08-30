@@ -19,6 +19,7 @@ using AGS_Tim.models;
 using WpfAnimatedGif;
 using AGS_Tim.services;
 
+
 namespace AGS_Tim.windows
 {
     /// <summary>
@@ -38,6 +39,11 @@ namespace AGS_Tim.windows
         {
             InitializeComponent();
             this.DataContext = this.activePlayer;
+
+           
+
+            System.Media.SoundPlayer music = new System.Media.SoundPlayer(Properties.Resources.Tim_sound);
+            music.Play();
         }
 
         /// <summary>
