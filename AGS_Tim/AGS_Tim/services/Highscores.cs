@@ -23,7 +23,7 @@ namespace AGS_Tim.services
                 level = Main.gameSession.gs.level,
                 name = Main.gameSession.gs.userName,
                 points = GetPoints(),
-                timer = Main.gameSession.gs.endTime - Main.gameSession.gs.startTime
+                timer = (Main.gameSession.gs.endTime - Main.gameSession.gs.startTime).ToString("mm':'ss")
             };
 
             Main.db.dbConnection.Insert(hs);
