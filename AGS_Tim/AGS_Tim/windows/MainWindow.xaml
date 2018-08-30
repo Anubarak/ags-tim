@@ -11,7 +11,7 @@
         
         Background="White"
         ResizeMode="NoResize"
-        WindowState ="Maximized"
+        WindowState ="Normal"
         AllowsTransparency="true"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None">
