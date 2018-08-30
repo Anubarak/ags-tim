@@ -27,8 +27,8 @@ namespace AGS_Tim.windows
             int Id = 1;
 
             DataGridTextColumn colId = new DataGridTextColumn();
-            DataGridTextColumn colPoints = new DataGridTextColumn();
             DataGridTextColumn colTime = new DataGridTextColumn();
+            DataGridTextColumn colPoints = new DataGridTextColumn();
             DataGridTextColumn colName = new DataGridTextColumn();
 
             DgHighscore.Columns.Add(colId);
@@ -45,7 +45,7 @@ namespace AGS_Tim.windows
             colId.Binding = new Binding("position");
 
             colId.Header = "Platzierung";
-            colPoints.Header = "Punkte";
+            colPoints.Header = "FehlerPunkte";
             colTime.Header = "Zeit";
             colName.Header = "Name";
             

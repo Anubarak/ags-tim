@@ -21,6 +21,8 @@ namespace AGS_Tim.windows
     /// </summary>
     public partial class NameEntry : Page
     {
+        private bool deleteCharacter = false;
+
         public NameEntry()
         {
             InitializeComponent();
@@ -30,9 +32,12 @@ namespace AGS_Tim.windows
         {
             if (ButtonNumber == 1)
             {
-                Main.mainWindow.Content = Main.mainWindow.GetGame();
-                Main.gameSession = new GameSessions();
-                Main.gameSession.gs.userName = this.TbName.Text;
+                Action<char> action = new Action<char>(TimerElapsed2);
+                InputConverter inputConverter = Main.mainWindow.ConvertInput(ButtonNumber, action);
+                if(!deleteCharacter )
+                {
+                    deleteCharacter = false;
+                }
 
             }
             else
@@ -50,6 +55,22 @@ namespace AGS_Tim.windows
             this.TbName.Text += x;
             this.LblCharacter.Content = "";
             this.BorderCharacter.Visibility = Visibility.Hidden;
+        }
+
+        public void TimerElapsed2(char x)
+        {
+            if (!deleteCharacter)
+            {
+
+                this.TbName.Text = this.TbName.Text.Remove(this.TbName.Text.Length - 1, 1);
+            }
+            else
+            {
+                Main.mainWindow.Content = Main.mainWindow.GetGame();
+                Main.gameSession = new GameSessions();
+                Main.gameSession.gs.userName = this.TbName.Text;
+            }
+
         }
     }
 }
