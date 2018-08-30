@@ -228,6 +228,7 @@ namespace AGS_Tim.windows
                 if (CheckIfGameIsOver())
                 {
                     EndGameSession();
+                    IsAnswering = false;
                 }
                 else
                 {
@@ -257,10 +258,12 @@ namespace AGS_Tim.windows
             Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
 
             if (Main.gameSession.gs.playersCompleted.Count() >= 6)
+            
+
                 return true;
     
             else
-
+                
             return false;
         }
 
@@ -270,10 +273,10 @@ namespace AGS_Tim.windows
         private void EndGameSession()
         {
             Main.gameSession.gs.endTime = DateTime.Now;
-         
-
             ResetWindow();
             Main.highscores.WriteHighscore();
+
+
         }
 
 
