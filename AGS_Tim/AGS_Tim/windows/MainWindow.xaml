@@ -6,31 +6,16 @@
         xmlns:local="clr-namespace:AGS_Tim.windows"
         mc:Ignorable="d"
         
-        Title="TIM-Arbeit"
         Height="720"
         Width="1280"
         
         Background="White"
         ResizeMode="NoResize"
+        WindowState ="Maximized"
+        AllowsTransparency="true"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="23"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-
-        <Label 
-            Grid.Row="0"
-            Background="RoyalBlue"
-            Foreground="White"
-            Content="TIM-Arbeit">
-        </Label>
-
-        <Border Grid.Row="2"
-            BorderBrush="RoyalBlue"
-            BorderThickness="2">
-        </Border>
     </Grid>
 </Window>

@@ -13,18 +13,6 @@
       Background="White">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="23"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-
-        <Label 
-            Grid.Row="0"
-            Background="RoyalBlue"
-            Foreground="White"
-            Content="TIM-Arbeit">
-        </Label>
-
         <Border Grid.Row="2"
             BorderBrush="RoyalBlue"
             BorderThickness="2">
@@ -34,5 +22,10 @@
                 >
             </Image>
         </Border>
+
+        <DataGrid
+            Name="DgHighscore"
+            Grid.Row="1">
+        </DataGrid>
     </Grid>
 </Page>
