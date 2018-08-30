@@ -34,5 +34,10 @@
                 >
             </Image>
         </Border>
+
+        <DataGrid
+            Name="DgHighscore"
+            Grid.Row="1">
+        </DataGrid>
     </Grid>
 </Page>
