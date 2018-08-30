@@ -56,8 +56,8 @@
             Width="149">
         </Image>
 
-        
-        
+
+
         <TextBlock
             Name="TbQuestion"
             HorizontalAlignment="Left"
@@ -72,59 +72,118 @@
             FontSize="28">
         </TextBlock>
 
-        <Border
-            Name="BorderTable1"
-            Grid.Row="1" 
-            BorderBrush="Gold"
-            BorderThickness="4"
-            Margin="667,222.8,459,330"
-            Visibility="Hidden">
-        </Border>
+        <Image
+            Name="SelectionTable1" 
+            Grid.Row="1"
+            Source="/AGS_Tim;component/Resources/Rahmen.PNG"
+            Margin="667,220,459,301"
+            Stretch="Fill"
+            Visibility="Hidden"
+            >
+        </Image>
 
-        <Border
-            Name="BorderTable2"
-            Grid.Row="1" 
-            BorderBrush="Gold"
-            BorderThickness="4"
-            Margin="882,222.8,244,330"
-            Visibility="Hidden">
-        </Border>
+        <Image
+            Name="SelectionTable2" 
+            Grid.Row="1"
+            Source="/AGS_Tim;component/Resources/Rahmen.PNG"
+            Margin="882,219.8,244,301"
+            Stretch="Fill"
+            Visibility="Hidden"
+            >
+        </Image>
 
-        <Border
-            Name="BorderTable3"
-            Grid.Row="1" 
-            BorderBrush="Gold"
-            BorderThickness="4"
-            Margin="1087,222.8,39,330"
-            Visibility="Hidden">
-        </Border>
+        <Image
+            Name="SelectionTable3" 
+            Grid.Row="1"
+            Source="/AGS_Tim;component/Resources/Rahmen.PNG"
+            Margin="1087,222.8,39,298"
+            Stretch="Fill"
+            Visibility="Hidden"
+            >
+        </Image>
 
-        <Border
-            Name="BorderTable4"
-            Grid.Row="1" 
-            BorderBrush="Gold"
-            BorderThickness="4"
-            Margin="667,400.8,459,152"
-            Visibility="Hidden">
-        </Border>
+        <Image
+            Name="SelectionTable4" 
+            Grid.Row="1"
+            Source="/AGS_Tim;component/Resources/Rahmen.PNG"
+            Margin="667,391,459,125"
+            Stretch="Fill"
+            Visibility="Hidden"
+            >
+        </Image>
 
-        <Border
-            Name="BorderTable5"
-            Grid.Row="1" 
-            BorderBrush="Gold"
-            BorderThickness="4"
-            Margin="882,400.8,244,152"
-            Visibility="Hidden">
-        </Border>
+        <Image
+            Name="SelectionTable5" 
+            Grid.Row="1"
+            Source="/AGS_Tim;component/Resources/Rahmen.PNG"
+            Margin="882,390.8,244,125"
+            Stretch="Fill"
+            Visibility="Hidden"
+            >
+        </Image>
 
-        <Border
-            Name="BorderTable6"
-            Grid.Row="1" 
-            BorderBrush="Gold"
-            BorderThickness="4"
-            Margin="1087,400.8,39,152"
+        <Image
+            Name="SelectionTable6" 
+            Grid.Row="1"
+            Source="/AGS_Tim;component/Resources/Rahmen.PNG"
+            Margin="1087,390.8,39,125"
+            Stretch="Fill"
+            Visibility="Hidden"
+            >
+        </Image>
+
+        <Image
+            x:Name="MedalTable1"
+            Grid.Row="1"
+            Source="pack://siteoforigin:,,,/Resources/Medaille.png"
+            Margin="712,281.8,504,342"
+            Stretch="Fill"
+            Visibility="Hidden"/>
+
+        <Image
+            Name="MedalTable2"
+            Grid.Row="1"
+            Source="pack://siteoforigin:,,,/Resources/Medaille.png"
+            Margin="924,281.8,292,342"
+            Stretch="Fill"
             Visibility="Hidden">
-        </Border>
+        </Image>
+
+        <Image
+            Name="MedalTable3"
+            Grid.Row="1"
+            Source="pack://siteoforigin:,,,/Resources/Medaille.png"
+            Margin="1134,281.8,82,342"
+            Stretch="Fill"
+            Visibility="Hidden">
+        </Image>
+
+        <Image
+            Name="MedalTable4"
+            Grid.Row="1"
+            Source="pack://siteoforigin:,,,/Resources/Medaille.png"
+            Margin="712,452.8,504,171"
+            Stretch="Fill"
+            Visibility="Hidden">
+        </Image>
+
+        <Image
+            Name="MedalTable5"
+            Grid.Row="1"
+            Source="pack://siteoforigin:,,,/Resources/Medaille.png"
+            Margin="924,452.8,292,171"
+            Stretch="Fill"
+            Visibility="Hidden">
+        </Image>
+
+        <Image
+            Name="MedalTable6"
+            Grid.Row="1"
+            Source="pack://siteoforigin:,,,/Resources/Medaille.png"
+            Margin="1134,452.8,82,171"
+            Stretch="Fill"
+            Visibility="Hidden">
+        </Image>
 
         <Border
             Name="BorderCharacter"

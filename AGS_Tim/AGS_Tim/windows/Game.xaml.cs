@@ -168,22 +168,22 @@ namespace AGS_Tim.windows
             switch (activate)
             {
                 case 1:
-                    this.BorderTable1.Visibility = Visibility.Visible;
+                    this.SelectionTable1.Visibility = Visibility.Visible;
                     break;
                 case 2:
-                    this.BorderTable2.Visibility = Visibility.Visible;
+                    this.SelectionTable2.Visibility = Visibility.Visible;
                     break;
                 case 3:
-                    this.BorderTable3.Visibility = Visibility.Visible;
+                    this.SelectionTable3.Visibility = Visibility.Visible;
                     break;
                 case 4:
-                    this.BorderTable4.Visibility = Visibility.Visible;
+                    this.SelectionTable4.Visibility = Visibility.Visible;
                     break;
                 case 5:
-                    this.BorderTable5.Visibility = Visibility.Visible;
+                    this.SelectionTable5.Visibility = Visibility.Visible;
                     break;
                 case 6:
-                    this.BorderTable6.Visibility = Visibility.Visible;
+                    this.SelectionTable6.Visibility = Visibility.Visible;
                     break;
             }
         }
@@ -194,19 +194,19 @@ namespace AGS_Tim.windows
         /// </summary>
         private void DeactivateTable()
         {
-            this.BorderTable1.Visibility = Visibility.Hidden;
-            this.BorderTable2.Visibility = Visibility.Hidden;
-            this.BorderTable3.Visibility = Visibility.Hidden;
-            this.BorderTable5.Visibility = Visibility.Hidden;
-            this.BorderTable4.Visibility = Visibility.Hidden;
-            this.BorderTable6.Visibility = Visibility.Hidden;
+            this.SelectionTable1.Visibility = Visibility.Hidden;
+            this.SelectionTable2.Visibility = Visibility.Hidden;
+            this.SelectionTable3.Visibility = Visibility.Hidden;
+            this.SelectionTable5.Visibility = Visibility.Hidden;
+            this.SelectionTable4.Visibility = Visibility.Hidden;
+            this.SelectionTable6.Visibility = Visibility.Hidden;
 
         }
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             Main.gameSession.gs.startTime = DateTime.Now;
 
-            this.BorderTable1.Visibility = Visibility.Visible;
+            this.SelectionTable1.Visibility = Visibility.Visible;
         }
 
 
@@ -226,11 +226,7 @@ namespace AGS_Tim.windows
             else if (Main.validate.CheckAnswer(answerInput) == ValidateAnswerResponse.AnswerComplete)
             {
                 Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
-                Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
-                Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
-                Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
-                Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
-                Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
+       
 
                 if (CheckIfGameIsOver())
                 {
@@ -248,12 +244,21 @@ namespace AGS_Tim.windows
                     ImageBehavior.SetAnimatedSource(ImgPlayer, ImgPlayer.Source);
                     this.ImgPlayer.Visibility = Visibility.Visible;
 
+
+                    switch (CurrentTable)
+                    {
+                        case 1:
+                            this.MedalTable1.Visibility = Visibility.Visible;
+                            break;
+                    }
                 }
               
             }
             else if (Main.validate.CheckAnswer(answerInput) == ValidateAnswerResponse.CorrectAnswer)
             {
-                Main.gameSession.gs.wrongAnswerCounter += 1; 
+                Main.gameSession.gs.wrongAnswerCounter += 1;
+
+
             }
 
 

@@ -225,7 +225,7 @@
     <Resource Include="Resources\Rahmen.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Medaille.png" />
+    <Resource Include="Resources\Medaille.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Pictures\Trophy.png" />
