@@ -36,14 +36,17 @@ namespace AGS_Tim.services
         /// <returns> List with Highscores</returns>
         public List<Highscore> ReadHighscores()
         {
-            List<Highscore> hs = new List<Highscore>(); 
-           var tempHighscore =  Main.db.dbConnection.Table<Highscore>();
+            List<Highscore> hs = new List<Highscore>();
+           
+            var tempHighscore =  Main.db.dbConnection.Table<Highscore>();
 
             foreach(var score in tempHighscore)
             {
                 hs.Add(score);
             }
-            return hs; 
+            List<Highscore> SortedList = hs.OrderBy(o => o.points).ToList();
+
+            return SortedList ; 
         }
 
 
@@ -63,6 +66,7 @@ namespace AGS_Tim.services
             totalPoints = timePoints + wrongAnswerPoints;
 
             return totalPoints;
+
         }
 
     }
