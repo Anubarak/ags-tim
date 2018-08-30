@@ -255,8 +255,9 @@ namespace AGS_Tim.windows
             }
             else if (Main.validate.CheckAnswer(answerInput) == ValidateAnswerResponse.AnswerComplete)
             {
+
                 Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
-    
+
 
                 if (CheckIfGameIsOver())
                 {
@@ -327,7 +328,7 @@ namespace AGS_Tim.windows
 
             TbQuestion.Text = "Herzlichen Glückwunsch!\nDu hast alle Aufgaben gelöst! Du kann das Nachsitzen verlassen.";
             TbQuestion.Text += "\n\nZeit = " + Main.gameSession.gs.endTime.Subtract(Main.gameSession.gs.startTime).ToString("mm':'ss");
-            TbQuestion.Text += "\nPunkte = " + Main.highscores.GetPoints();
+            TbQuestion.Text += "\nEingabefehler = " + Main.highscores.GetPoints();
             TbQuestion.Text += "\n\n1 Zurück zum Hauptmenü\n2 Beenden";
 
             DeactivateTable();

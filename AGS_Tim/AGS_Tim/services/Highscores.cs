@@ -44,7 +44,7 @@ namespace AGS_Tim.services
             {
                 hs.Add(score);
             }
-            List<Highscore> SortedList = hs.OrderBy(o => o.points).ToList();
+            List<Highscore> SortedList = hs.OrderBy(o => o.timer).ToList();
 
             return SortedList ; 
         }
@@ -57,15 +57,9 @@ namespace AGS_Tim.services
         public int GetPoints()
         {
             GameSession gs = Main.gameSession.gs;
-            int totalPoints = 0;
-            int timePoints = 0;
-            int wrongAnswerPoints = 0;
 
-            timePoints = (int)(gs.endTime - gs.startTime).TotalSeconds;
-            wrongAnswerPoints = gs.wrongAnswerCounter * 2;
-            totalPoints = timePoints + wrongAnswerPoints;
 
-            return totalPoints;
+            return gs.wrongAnswerCounter;
 
         }
 
