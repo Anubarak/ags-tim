@@ -21,7 +21,7 @@ namespace AGS_Tim.windows
     /// </summary>
     public partial class NameEntry : Page
     {
-        private bool deleteCharacter = false;
+        private bool deleteCharacter = true;
 
         public NameEntry()
         {
@@ -34,10 +34,9 @@ namespace AGS_Tim.windows
             {
                 Action<char> action = new Action<char>(TimerElapsed2);
                 InputConverter inputConverter = Main.mainWindow.ConvertInput(ButtonNumber, action);
-                if(!deleteCharacter )
-                {
-                    deleteCharacter = false;
-                }
+        
+                    deleteCharacter = !deleteCharacter;
+                
 
             }
             else
@@ -59,10 +58,14 @@ namespace AGS_Tim.windows
 
         public void TimerElapsed2(char x)
         {
-            if (!deleteCharacter)
+            if (deleteCharacter)
             {
-
-                this.TbName.Text = this.TbName.Text.Remove(this.TbName.Text.Length - 1, 1);
+                if(!this.TbName.Equals("") && this.TbName != null)
+                {
+                    this.TbName.Text = this.TbName.Text.Remove(this.TbName.Text.Length - 1, 1);
+                }
+             
+                deleteCharacter = true;
             }
             else
             {
