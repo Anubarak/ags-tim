@@ -32,18 +32,17 @@ namespace AGS_Tim.windows
         Player activePlayer;
         string answerInput = "";
         bool gameOver = false;
-        
-        
+
+        System.Media.SoundPlayer bgMusic = new System.Media.SoundPlayer(Properties.Resources.Tim_sound);
+        System.Media.SoundPlayer playerMusic = new System.Media.SoundPlayer(Properties.Resources._105_rival_appears);
+        System.Media.SoundPlayer victoryMusic = new System.Media.SoundPlayer(Properties.Resources._108_victory__vs_wild_pokemon_);
 
         public Game()
         {
             InitializeComponent();
             this.DataContext = this.activePlayer;
 
-           
-
-            System.Media.SoundPlayer music = new System.Media.SoundPlayer(Properties.Resources.Tim_sound);
-            music.Play();
+            bgMusic.PlayLooping(); 
         }
 
         /// <summary>
@@ -58,7 +57,7 @@ namespace AGS_Tim.windows
                 InputConverter inputConverter = Main.mainWindow.ConvertInput(ButtonNumber, action);
                 this.BorderCharacter.Visibility = Visibility.Visible;
                 this.LblCharacter.Content = inputConverter.GetCharacter();
-                
+       
 
             }
             else //Player Selection
@@ -92,6 +91,9 @@ namespace AGS_Tim.windows
                             ImageBehavior.SetAnimatedSource(ImgPlayer, ImgPlayer.Source);
                             this.ImgPlayer.Visibility = Visibility.Visible;
                             Main.validate = new Validate(activePlayer);
+
+                            bgMusic.Stop();
+                            playerMusic.PlayLooping();
                         }
                         else
                         {
@@ -274,7 +276,11 @@ namespace AGS_Tim.windows
                     this.ImgPlayer.Visibility = Visibility.Visible;
 
                     SetMedal();
+
+                    playerMusic.Stop();
+                    bgMusic.PlayLooping();
                     
+
                 }
               
             }
@@ -329,6 +335,10 @@ namespace AGS_Tim.windows
             this.ImgPlayer.Source = new BitmapImage(new Uri("pack://application:,,,/Pictures/Trophy.png"));
             ImageBehavior.SetAnimatedSource(ImgPlayer, ImgPlayer.Source);
             this.ImgPlayer.Visibility = Visibility.Visible;
+
+            playerMusic.Stop();
+            bgMusic.Stop();
+            victoryMusic.Play();
         }
 
 
