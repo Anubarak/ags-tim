@@ -25,7 +25,13 @@
 
         <DataGrid
             Name="DgHighscore"
-            Grid.Row="1">
+            Margin="255,84,255,265"
+            FontSize="30"
+            HorizontalContentAlignment="Stretch"
+            HorizontalAlignment="Stretch"
+            ColumnWidth="*"
+            Background="Transparent"
+            BorderThickness="0">
         </DataGrid>
     </Grid>
 </Page>
