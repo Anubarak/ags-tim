@@ -17,7 +17,7 @@
             BorderBrush="RoyalBlue"
             BorderThickness="2">
             <Image
-                Stretch="None"
+                Stretch="Fill"
                 Source="/AGS_Tim;component/Resources/tafel.jpg"
                 >
             </Image>
@@ -53,6 +53,8 @@
             BorderBrush="Black"
             FontSize="22"
             TextAlignment="Center"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
             Width="350">
         </TextBox>
 

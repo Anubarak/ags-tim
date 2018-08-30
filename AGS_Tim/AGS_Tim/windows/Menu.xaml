@@ -23,6 +23,7 @@
         </Border>
 
         <Label    
+            VerticalAlignment="Stretch"
             Grid.Row="1"
             Margin="0,42,0,600"
             Content="TIM"
@@ -33,20 +34,18 @@
         </Label>
 
         <TextBlock
-            Grid.Row="1"
-            Margin="0,120,0,490"
+            Margin="474,174,474,436"
             FontSize="25"
             FontWeight="Bold"
             Foreground="White"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
             TextAlignment="Center">
             <Run>Dies ist ein Einleitungstext,</Run> <LineBreak/> 
             <Run>welcher die Situation erklärt</Run>
         </TextBlock>
         <StackPanel
-            Grid.Row="1"
-            Margin="0,280,0,230"
+            Margin="0,432,0,78"
             >
             <Button 
                 Background="White"
@@ -92,46 +91,41 @@
             </Button>
 
         </StackPanel>
-
         <TextBlock
-            Grid.Row="1"
             Foreground="Black"
             Background="Transparent"
+            HorizontalAlignment="Center"
             Text="1"
             FontSize="25"
             FontWeight="Bold"
-            Margin="521,279.8,741,384">
-        </TextBlock>
+            Margin="521,430,741,234"/>
 
         <TextBlock
-            Grid.Row="1"
             Foreground="Black"
             Background="Transparent"
+            HorizontalAlignment="Center"
             Text="2"
             FontSize="25"
             FontWeight="Bold"
-            Margin="521,324.8,741,339">
-        </TextBlock>
+            Margin="521,475,741,189"/>
 
         <TextBlock
-            Grid.Row="1"
             Foreground="Black"
             Background="Transparent"
+            HorizontalAlignment="Center"
             Text="3"
             FontSize="25"
             FontWeight="Bold"
-            Margin="521,369.8,741,294">
-        </TextBlock>
+            Margin="521,520,741,144"/>
 
         <TextBlock
-            Grid.Row="1"
+            HorizontalAlignment="Center"
             Foreground="Black"
             Background="Transparent"
             Text="4"
             FontSize="25"
             FontWeight="Bold"
-            Margin="521,413.8,741,250">
-        </TextBlock>
+            Margin="521,564,741,100"/>
 
     </Grid>
 </Page>
