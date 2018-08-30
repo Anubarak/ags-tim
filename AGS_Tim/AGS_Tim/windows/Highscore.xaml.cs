@@ -23,6 +23,36 @@ namespace AGS_Tim.windows
         public Highscore()
         {
             InitializeComponent();
+
+
+            DataGridTextColumn colId = new DataGridTextColumn();
+            DataGridTextColumn colPoints = new DataGridTextColumn();
+            DataGridTextColumn colTime = new DataGridTextColumn();
+            DataGridTextColumn colName = new DataGridTextColumn();
+
+            DgHighscore.Columns.Add(colId);
+        
+            DgHighscore.Columns.Add(colPoints);
+            DgHighscore.Columns.Add(colTime);
+            DgHighscore.Columns.Add(colName);
+
+           
+
+            colPoints.Binding = new Binding("points");
+            colTime.Binding = new Binding("timer");
+            colName.Binding = new Binding("name");
+
+
+            colPoints.Header = "Punkte";
+            colTime.Header = "Zeit";
+            colName.Header = "Name";
+
+            foreach(var hs in Main.highscores.ReadHighscores())
+            {
+                DgHighscore.Items.Add(hs);
+            }
+
+
         }
 
         public void ButtonPressed(int ButtonNumber)

@@ -226,7 +226,7 @@ namespace AGS_Tim.windows
             else if (Main.validate.CheckAnswer(answerInput) == ValidateAnswerResponse.AnswerComplete)
             {
                 Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
-       
+
 
                 if (CheckIfGameIsOver())
                 {

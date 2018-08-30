@@ -34,9 +34,9 @@ namespace AGS_Tim.windows
             this.Content = this.getMenu();
         }
 
-        public Menu getMenu()
+        public Menu getMenu(bool forceRefresh = false)
         {
-            if (this.menu == null)
+            if (forceRefresh || this.menu == null)
             {
                 this.menu = new Menu();
             }
