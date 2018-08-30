@@ -147,15 +147,17 @@
         <Image
             x:Name="MedalTable1"
             Grid.Row="1"
-            Source="pack://siteoforigin:,,,/Resources/Medaille.png"
+            Source="/AGS_Tim;component/Resources/Medaille.png"
             Margin="712,281.8,504,342"
             Stretch="Fill"
-            Visibility="Hidden"/>
+            Visibility="Hidden"
+            Panel.ZIndex="100"/>
+        
 
         <Image
             Name="MedalTable2"
             Grid.Row="1"
-            Source="pack://siteoforigin:,,,/Resources/Medaille.png"
+            Source="/AGS_Tim;component/Resources/Medaille.png"
             Margin="924,281.8,292,342"
             Stretch="Fill"
             Visibility="Hidden">
@@ -164,7 +166,7 @@
         <Image
             Name="MedalTable3"
             Grid.Row="1"
-            Source="pack://siteoforigin:,,,/Resources/Medaille.png"
+            Source="/AGS_Tim;component/Resources/Medaille.png"
             Margin="1134,281.8,82,342"
             Stretch="Fill"
             Visibility="Hidden">
@@ -173,7 +175,7 @@
         <Image
             Name="MedalTable4"
             Grid.Row="1"
-            Source="pack://siteoforigin:,,,/Resources/Medaille.png"
+            Source="/AGS_Tim;component/Resources/Medaille.png"
             Margin="712,452.8,504,171"
             Stretch="Fill"
             Visibility="Hidden">
@@ -182,7 +184,7 @@
         <Image
             Name="MedalTable5"
             Grid.Row="1"
-            Source="pack://siteoforigin:,,,/Resources/Medaille.png"
+            Source="/AGS_Tim;component/Resources/Medaille.png"
             Margin="924,452.8,292,171"
             Stretch="Fill"
             Visibility="Hidden">
@@ -191,7 +193,7 @@
         <Image
             Name="MedalTable6"
             Grid.Row="1"
-            Source="pack://siteoforigin:,,,/Resources/Medaille.png"
+            Source="/AGS_Tim;component/Resources/Medaille.png"
             Margin="1134,452.8,82,171"
             Stretch="Fill"
             Visibility="Hidden">

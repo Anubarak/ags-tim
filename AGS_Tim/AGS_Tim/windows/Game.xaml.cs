@@ -30,6 +30,7 @@ namespace AGS_Tim.windows
         int CurrentTable = 1;
         Player activePlayer;
         string answerInput = "";
+        bool gameOver = false;
         
         
 
@@ -56,104 +57,125 @@ namespace AGS_Tim.windows
             }
             else //Player Selection
             {
-                //Confirming Player Selection
-                if (ButtonNumber == 1) {
+
+                if (gameOver == true)
+                {
+                    if (ButtonNumber == 1)
+                    {
+                        Main.mainWindow.Content = Main.mainWindow.getMenu();
+                    }
+                    else if (ButtonNumber == 2)
+                    {
+                        Environment.Exit(0);
+                    }
+                }
+                else
+                {
+                    //Confirming Player Selection
+                    if (ButtonNumber == 1)
+                    {
 
 
-                    //Checks if Player was already Played
-                    if (!Main.gameSession.gs.playersCompleted.Contains(Main.gameSession.gs.players[CurrentTable - 1].ID))
-                    {
-                        this.IsAnswering = true;
-                        activePlayer = Main.gameSession.gs.players[CurrentTable - 1];
-                        this.TbQuestion.Text = activePlayer.Question.text;
-                        this.ImgPlayer.Source = new BitmapImage(new Uri("pack://application:,,,/Pictures/" + activePlayer.PlayerPicture));
-                        ImageBehavior.SetAnimatedSource(ImgPlayer, ImgPlayer.Source);
-                        this.ImgPlayer.Visibility = Visibility.Visible;
-                        Main.validate = new Validate(activePlayer);
+                        //Checks if Player was already Played
+                        if (!Main.gameSession.gs.playersCompleted.Contains(Main.gameSession.gs.players[CurrentTable - 1].ID))
+                        {
+                            this.IsAnswering = true;
+                            activePlayer = Main.gameSession.gs.players[CurrentTable - 1];
+                            this.TbQuestion.Text = activePlayer.Question.text;
+                            this.ImgPlayer.Source = new BitmapImage(new Uri("pack://application:,,,/Pictures/" + activePlayer.PlayerPicture));
+                            ImageBehavior.SetAnimatedSource(ImgPlayer, ImgPlayer.Source);
+                            this.ImgPlayer.Visibility = Visibility.Visible;
+                            Main.validate = new Validate(activePlayer);
+                        }
+                        else
+                        {
+                            // Hier hin was passieren soll wenn der Player schon gespielt wurde
+                        }
+
                     }
-                    else
+
+                    // Selecting player with gamepad
+                    // UP AND DOWN
+                    else if (ButtonNumber == 2 || ButtonNumber == 8)
                     {
-                        // Hier hin was passieren soll wenn der Player schon gespielt wurde
+                        switch (CurrentTable)
+                        {
+                            case 1:
+                                ChangeTable(4);
+                                break;
+                            case 2:
+                                ChangeTable(5);
+                                break;
+                            case 3:
+                                ChangeTable(6);
+                                break;
+                            case 4:
+                                ChangeTable(1);
+                                break;
+                            case 5:
+                                ChangeTable(2);
+                                break;
+                            case 6:
+                                ChangeTable(3);
+                                break;
+                        }
                     }
-                 
+                    //LEFT
+                    else if (ButtonNumber == 4)
+                    {
+                        switch (CurrentTable)
+                        {
+                            case 1:
+                                ChangeTable(3);
+                                break;
+                            case 2:
+                                ChangeTable(1);
+                                break;
+                            case 3:
+                                ChangeTable(2);
+                                break;
+                            case 4:
+                                ChangeTable(6);
+                                break;
+                            case 5:
+                                ChangeTable(4);
+                                break;
+                            case 6:
+                                ChangeTable(5);
+                                break;
+                        }
+                    }
+                    //RIGHT
+                    else if (ButtonNumber == 6)
+                    {
+                        switch (CurrentTable)
+                        {
+                            case 1:
+                                ChangeTable(2);
+                                break;
+                            case 2:
+                                ChangeTable(3);
+                                break;
+                            case 3:
+                                ChangeTable(1);
+                                break;
+                            case 4:
+                                ChangeTable(5);
+                                break;
+                            case 5:
+                                ChangeTable(6);
+                                break;
+                            case 6:
+                                ChangeTable(4);
+                                break;
+                        }
+                    }
                 }
 
-                // Selecting player with gamepad
-                // UP AND DOWN
-                else if (ButtonNumber == 2 || ButtonNumber == 8)
-                {
-                    switch (CurrentTable)
-                    {
-                        case 1:
-                            ChangeTable(4);
-                            break;
-                        case 2:
-                            ChangeTable(5);
-                            break;
-                        case 3:
-                            ChangeTable(6);
-                            break;
-                        case 4:
-                            ChangeTable(1);
-                            break;
-                        case 5:
-                            ChangeTable(2);
-                            break;
-                        case 6:
-                            ChangeTable(3);
-                            break;
-                    }
-                }
-                //LEFT
-                else if (ButtonNumber == 4)
-                {
-                    switch (CurrentTable)
-                    {
-                        case 1:
-                            ChangeTable(3);
-                            break;
-                        case 2:
-                            ChangeTable(1);
-                            break;
-                        case 3:
-                            ChangeTable(2);
-                            break;
-                        case 4:
-                            ChangeTable(6);
-                            break;
-                        case 5:
-                            ChangeTable(4);
-                            break;
-                        case 6:
-                            ChangeTable(5);
-                            break;
-                    }
-                }
-                //RIGHT
-                else if (ButtonNumber == 6)
-                {
-                    switch (CurrentTable)
-                    {
-                        case 1:
-                            ChangeTable(2);
-                            break;
-                        case 2:
-                            ChangeTable(3);
-                            break;
-                        case 3:
-                            ChangeTable(1);
-                            break;
-                        case 4:
-                            ChangeTable(5);
-                            break;
-                        case 5:
-                            ChangeTable(6);
-                            break;
-                        case 6:
-                            ChangeTable(4);
-                            break;
-                    }
-                }
+           
+
+               
+             
             }
         }
 
@@ -226,12 +248,19 @@ namespace AGS_Tim.windows
             else if (Main.validate.CheckAnswer(answerInput) == ValidateAnswerResponse.AnswerComplete)
             {
                 Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
-       
+                Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
+                Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
+                Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
+                Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
+                Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
+                Main.gameSession.gs.playersCompleted.Add(activePlayer.ID);
+
 
                 if (CheckIfGameIsOver())
                 {
-                    EndGameSession();
                     IsAnswering = false;
+                    EndGameSession();
+                    SetMedal(); 
                 }
                 else
                 {
@@ -244,13 +273,8 @@ namespace AGS_Tim.windows
                     ImageBehavior.SetAnimatedSource(ImgPlayer, ImgPlayer.Source);
                     this.ImgPlayer.Visibility = Visibility.Visible;
 
-
-                    switch (CurrentTable)
-                    {
-                        case 1:
-                            this.MedalTable1.Visibility = Visibility.Visible;
-                            break;
-                    }
+                    SetMedal();
+                    
                 }
               
             }
@@ -290,13 +314,17 @@ namespace AGS_Tim.windows
         /// </summary>
         private void EndGameSession()
         {
+            gameOver = true;
             Main.gameSession.gs.endTime = DateTime.Now;
             ResetWindow();
             Main.highscores.WriteHighscore();
 
-            TbQuestion.Text = "Herzlichen Glückwunsch!\nDu hast alle Aufgaben gelöst! Du kann das Nachsitzen verlassen.\n\nZurück zum Hauptmenü mit 1\nBeenden mit 2";
-            TbQuestion.Text += "\nZeit = " + Main.gameSession.gs.endTime.Subtract(Main.gameSession.gs.startTime).ToString("mm':'ss");
+            TbQuestion.Text = "Herzlichen Glückwunsch!\nDu hast alle Aufgaben gelöst! Du kann das Nachsitzen verlassen.";
+            TbQuestion.Text += "\n\nZeit = " + Main.gameSession.gs.endTime.Subtract(Main.gameSession.gs.startTime).ToString("mm':'ss");
             TbQuestion.Text += "\nPunkte = " + Main.highscores.GetPoints();
+            TbQuestion.Text += "\n\n1 Zurück zum Hauptmenü\n2 Beenden";
+
+            DeactivateTable();
 
             this.ImgPlayer.Source = new BitmapImage(new Uri("pack://application:,,,/Pictures/Trophy.png"));
             ImageBehavior.SetAnimatedSource(ImgPlayer, ImgPlayer.Source);
@@ -316,5 +344,35 @@ namespace AGS_Tim.windows
             this.ImgPlayer.Source = null;
             ImageBehavior.SetAnimatedSource(ImgPlayer, null);
         }
+
+        /// <summary>
+        /// Sets the medal visible for the table
+        /// </summary>
+        public void SetMedal()
+        {
+            switch (CurrentTable)
+            {
+                case 1:
+                    this.MedalTable1.Visibility = Visibility.Visible;
+                    break;
+                case 2:
+                    this.MedalTable2.Visibility = Visibility.Visible;
+                    break;
+                case 3:
+                    this.MedalTable3.Visibility = Visibility.Visible;
+                    break;
+                case 4:
+                    this.MedalTable4.Visibility = Visibility.Visible;
+                    break;
+                case 5:
+                    this.MedalTable5.Visibility = Visibility.Visible;
+                    break;
+                case 6:
+                    this.MedalTable6.Visibility = Visibility.Visible;
+                    break;
+            }
+        }
+
     }
+
 }

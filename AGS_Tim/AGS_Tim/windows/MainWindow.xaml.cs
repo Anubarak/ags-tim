@@ -36,21 +36,18 @@ namespace AGS_Tim.windows
 
         public Menu getMenu()
         {
-            if (this.menu == null)
-            {
+         
                 this.menu = new Menu();
-            }
+         
 
             return this.menu;
         }
 
         public NameEntry GetNameEntry(bool forceRefresh = false)
         {
-            if (forceRefresh || this.nameEntry == null)
-            {
-                this.nameEntry = new NameEntry();
-            }
 
+                this.nameEntry = new NameEntry();
+        
             return this.nameEntry;
         }
 
@@ -66,10 +63,9 @@ namespace AGS_Tim.windows
 
         public Game GetGame(bool forceRefresh = false)
         {
-            if (forceRefresh || this.game == null)
-            {
+        
                 this.game = new Game();
-            }
+            
 
             return this.game;
         }
