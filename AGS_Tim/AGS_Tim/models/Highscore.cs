@@ -16,5 +16,6 @@ namespace AGS_Tim.models
         public int points { get; set; }
         public String timer { get; set; }
         public int level { get; set; }
-    }
+        public int position { get; set; }
+}
 }

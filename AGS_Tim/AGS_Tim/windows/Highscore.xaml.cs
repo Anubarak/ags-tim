@@ -24,6 +24,7 @@ namespace AGS_Tim.windows
         {
             InitializeComponent();
 
+            int Id = 1;
 
             DataGridTextColumn colId = new DataGridTextColumn();
             DataGridTextColumn colPoints = new DataGridTextColumn();
@@ -41,20 +42,23 @@ namespace AGS_Tim.windows
             colPoints.Binding = new Binding("points");
             colTime.Binding = new Binding("timer");
             colName.Binding = new Binding("name");
+            colId.Binding = new Binding("position");
 
-
+            colId.Header = "Platzierung";
             colPoints.Header = "Punkte";
             colTime.Header = "Zeit";
             colName.Header = "Name";
+            
 
             foreach(var hs in Main.highscores.ReadHighscores())
             {
+                hs.position = Id;
+                Id++;
                 DgHighscore.Items.Add(hs);
             }
-
-
+            
         }
-
+        
         public void ButtonPressed(int ButtonNumber)
         {
             if (ButtonNumber == 1)
