@@ -121,6 +121,8 @@ namespace AGS_Tim.controllers
                         ButtonPressed(this, pressedList[0]);
                         pressedButton = pressedList[0];
                     }
+                    else if (pressedButton == pressedList[0])
+                        continue;
                     else
                         pressedButton = 0;
                 }
