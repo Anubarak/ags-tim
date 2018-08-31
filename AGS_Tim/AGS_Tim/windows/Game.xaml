@@ -77,7 +77,7 @@
             Source="/AGS_Tim;component/Resources/Rahmen.PNG"
             Margin="667,220,459,329"
             Stretch="Fill"
-            Visibility="Visible"
+            Visibility="Hidden"
             />
 
         <Image
@@ -85,7 +85,7 @@
             Source="/AGS_Tim;component/Resources/Rahmen.PNG"
             Margin="882,220,244,329"
             Stretch="Fill"
-            Visibility="Visible"
+            Visibility="Hidden"
             />
 
         <Image
@@ -94,7 +94,7 @@
             Source="/AGS_Tim;component/Resources/Rahmen.PNG"
             Margin="1087,220,39,329"
             Stretch="Fill"
-            Visibility="Visible"
+            Visibility="Hidden"
             >
         </Image>
 
@@ -103,7 +103,7 @@
             Source="/AGS_Tim;component/Resources/Rahmen.PNG"
             Margin="667,391,459,157"
             Stretch="Fill"
-            Visibility="Visible"
+            Visibility="Hidden"
             />
 
         <Image
@@ -112,7 +112,7 @@
             Source="/AGS_Tim;component/Resources/Rahmen.PNG"
             Margin="882,391,244,157"
             Stretch="Fill"
-            Visibility="Visible"
+            Visibility="Hidden"
             >
         </Image>
 
@@ -122,7 +122,7 @@
             Source="/AGS_Tim;component/Resources/Rahmen.PNG"
             Margin="1087,391,39,157"
             Stretch="Fill"
-            Visibility="Visible"
+            Visibility="Hidden"
             >
         </Image>
 
