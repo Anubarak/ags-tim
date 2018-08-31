@@ -38,48 +38,37 @@ namespace AGS_Tim.windows
         }
 
         public Menu getMenu()
-        {
+        {         
+            this.menu = new Menu();
          
-                this.menu = new Menu();
-         
-
             return this.menu;
         }
 
         public NameEntry GetNameEntry(bool forceRefresh = false)
         {
-
-                this.nameEntry = new NameEntry();
+            this.nameEntry = new NameEntry();
         
             return this.nameEntry;
         }
 
         public Highscore GetHighscore(bool forceRefresh = false)
-        {
-            if (forceRefresh || this.highscore == null)
-            {
-                this.highscore = new Highscore();
-            }
-
+        {            
+            this.highscore = new Highscore();
+            
             return this.highscore;
         }
 
         public Game GetGame(bool forceRefresh = false)
-        {
-        
-                this.game = new Game();
+        {        
+            this.game = new Game();
             
-
             return this.game;
         }
 
         public SettingsPage GetSettingsPage(bool forceRefresh = false)
         {
-            if (forceRefresh || this.settingsPage == null)
-            {
-                this.settingsPage = new SettingsPage();
-            }
-
+            this.settingsPage = new SettingsPage();
+         
             return this.settingsPage;
         }
 
