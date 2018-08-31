@@ -237,9 +237,6 @@
     <Resource Include="Tim.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\105-rival appears.wav" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\108-victory %28vs wild pokemon%29.wav" />
   </ItemGroup>
   <ItemGroup>
