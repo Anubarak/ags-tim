@@ -1,37 +1,328 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="AGS_Tim.Main">
-    <Position X="2.5" Y="0.5" Width="1.5" />
+  <Comment CommentText="Models">
+    <Position X="9.243" Y="2.199" Height="0.291" Width="0.7" />
+  </Comment>
+  <Comment CommentText="Controller">
+    <Position X="6.606" Y="3.617" Height="0.317" Width="0.8" />
+  </Comment>
+  <Comment CommentText="View">
+    <Position X="2.728" Y="4.247" Height="0.291" Width="0.7" />
+  </Comment>
+  <Class Name="AGS_Tim.Main" Collapsed="true">
+    <Position X="4.25" Y="2" Width="1.5" />
+    <AssociationLine Name="db" Type="AGS_Tim.services.Database" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="2.125" />
+        <Point X="3.25" Y="2.125" />
+        <Point X="3.25" Y="1.562" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="mainWindow" Type="AGS_Tim.windows.MainWindow" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="2.375" />
+        <Point X="3.625" Y="2.375" />
+        <Point X="3.625" Y="2.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="gameSession" Type="AGS_Tim.services.GameSessions" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="2.25" />
+        <Point X="1.062" Y="2.25" />
+        <Point X="1.062" Y="1.562" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="hardware" Type="AGS_Tim.services.Hardware" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.75" Y="2.375" />
+        <Point X="6.062" Y="2.375" />
+        <Point X="6.062" Y="3.218" />
+        <Point X="6.25" Y="3.218" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="validate" Type="AGS_Tim.services.Validate" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.75" Y="2.25" />
+        <Point X="9" Y="2.25" />
+        <Point X="9" Y="1.562" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="settings" Type="AGS_Tim.services.Settings" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.75" Y="2.125" />
+        <Point X="7.25" Y="2.125" />
+        <Point X="7.25" Y="1.562" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAQAAAAAAAABAAAAAQAAAIAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAAAAIAAAAAQAAgAAAAABAAAhASAAAIAAAAAAAAAAAA=</HashCode>
       <FileName>Main.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="db" />
       <Field Name="highscores" />
       <Field Name="questions" />
+      <Field Name="subjects" />
+      <Field Name="mainWindow" />
+      <Field Name="gameSession" />
+      <Field Name="hardware" />
+      <Field Name="validate" />
+      <Field Name="settings" />
     </ShowAsAssociation>
   </Class>
   <Class Name="AGS_Tim.services.Database" Collapsed="true">
-    <Position X="0.5" Y="3" Width="1.5" />
+    <Position X="2.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>IAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>services\Database.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AGS_Tim.services.Highscores" Collapsed="true">
-    <Position X="4.25" Y="3" Width="1.5" />
+    <Position X="4.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAYAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>services\Highscores.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AGS_Tim.services.Questions" Collapsed="true">
-    <Position X="2.5" Y="3" Width="1.5" />
+    <Position X="0.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>services\Questions.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="AGS_Tim.services.GameSessions" Collapsed="true">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>services\GameSessions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AGS_Tim.services.Hardware" Collapsed="true">
+    <Position X="6.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAABAAAAEAAAAAAAgAAAAAAAAkAAAAQAEAA=</HashCode>
+      <FileName>services\Hardware.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="activeController" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AGS_Tim.services.InputConverter" Collapsed="true">
+    <Position X="4" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAQAAAgACACAAIAAAQAAAAAAAAAAAgAESAg=</HashCode>
+      <FileName>services\InputConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AGS_Tim.services.Settings" Collapsed="true">
+    <Position X="6.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAgAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>services\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AGS_Tim.services.Subjects" Collapsed="true">
+    <Position X="4.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>services\Subjects.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AGS_Tim.services.Validate" Collapsed="true">
+    <Position X="8.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>services\Validate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AGS_Tim.windows.MainWindow" Collapsed="true">
+    <Position X="2.5" Y="2.75" Width="1.5" />
+    <AssociationLine Name="menu" Type="AGS_Tim.windows.Menu" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.625" Y="3.441" />
+        <Point X="2.625" Y="4.892" />
+        <Point X="2" Y="4.892" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="nameEntry" Type="AGS_Tim.windows.NameEntry" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.5" Y="3.187" />
+        <Point X="2.25" Y="3.187" />
+        <Point X="2.25" Y="4.048" />
+        <Point X="2" Y="4.048" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="game" Type="AGS_Tim.windows.Game" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.562" Y="3.441" />
+        <Point X="3.562" Y="5.166" />
+        <Point X="4" Y="5.166" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="highscore" Type="AGS_Tim.windows.Highscore" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.938" Y="3.441" />
+        <Point X="2.938" Y="6.267" />
+        <Point X="2" Y="6.267" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="inputConverter" Type="AGS_Tim.services.InputConverter" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.25" Y="3.441" />
+        <Point X="3.25" Y="6.009" />
+        <Point X="4" Y="6.009" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="settingsPage" Type="AGS_Tim.windows.SettingsPage" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4" Y="3.125" />
+        <Point X="4.094" Y="3.125" />
+        <Point X="4.094" Y="3.687" />
+        <Point X="3.938" Y="3.687" />
+        <Point X="3.938" Y="4.096" />
+        <Point X="4" Y="4.096" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AABgCAAAIAIAAAAAAAgICAgKAAAAACAIAAAAAAABCAA=</HashCode>
+      <FileName>windows\MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="menu" />
+      <Field Name="nameEntry" />
+      <Field Name="game" />
+      <Field Name="highscore" />
+      <Field Name="inputConverter" />
+      <Field Name="settingsPage" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AGS_Tim.windows.SettingsPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>windows\SettingsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AGS_Tim.windows.Game" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAIAkAAAAAEAgAAAQAAAAAQIAIAAAAAAEAAAIAIQ=</HashCode>
+      <FileName>windows\Game.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AGS_Tim.windows.Highscore" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>windows\Highscore.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AGS_Tim.windows.Menu" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>windows\Menu.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AGS_Tim.windows.NameEntry" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAgAAAAAAAAAAAAAAAAAAIAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>windows\NameEntry.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AGS_Tim.controllers.HopscotchMat" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAQAAEAEAAQECAgEAAAABAAAQAAAAAAAAAAgAABAA=</HashCode>
+      <FileName>controllers\HopscotchMat.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AGS_Tim.controllers.Numpad" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAkAAAAQACAAAAAAABAAAQAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>controllers\Numpad.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AGS_Tim.models.GameSession" Collapsed="true">
+    <Position X="8" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAACEAAAAAgADAAAAEAAAAAIAAAAAEAAgA=</HashCode>
+      <FileName>models\GameSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AGS_Tim.models.Highscore" Collapsed="true">
+    <Position X="9.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAAAAAAAAAAIAAAAAEEAAQAAAAAAAAAAgA=</HashCode>
+      <FileName>models\Highscore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AGS_Tim.models.Player" Collapsed="true">
+    <Position X="8" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAgAAAAAgAAAAIAAAAQAAAFAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>models\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AGS_Tim.models.Question" Collapsed="true">
+    <Position X="8" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAACAAAAAAEEAAAQIAAAEABAAAgA=</HashCode>
+      <FileName>models\Question.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AGS_Tim.models.QuestionType" Collapsed="true">
+    <Position X="9.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>models\QuestionType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AGS_Tim.models.Setting" Collapsed="true">
+    <Position X="9.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>models\Setting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AGS_Tim.models.Subject" Collapsed="true">
+    <Position X="8" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>models\Subject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="AGS_Tim.controllers.InputController" Collapsed="true">
+    <Position X="6.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAEAAAAQAAAAAAAAABAAAQAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>controllers\InputController.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="AGS_Tim.models.EHWInput" Collapsed="true">
+    <Position X="8" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>models\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AGS_Tim.models.ValidateAnswerResponse" Collapsed="true">
+    <Position X="9.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAQAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>models\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
