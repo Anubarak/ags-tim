@@ -31,7 +31,7 @@
             Grid.Row="1"
             VerticalAlignment="Top"
             Width="630"
-            Source="/AGS_Tim;component/Resources/pixel-classroom.png">
+            Source="/AGS_Tim;component/Resources/room.png">
         </Image>
 
         <TextBox
@@ -73,52 +73,46 @@
         </TextBlock>
 
         <Image
-            Name="SelectionTable1" 
-            Grid.Row="1"
+            Name="SelectionTable1"
             Source="/AGS_Tim;component/Resources/Rahmen.PNG"
-            Margin="667,220,459,301"
+            Margin="667,220,459,329"
             Stretch="Fill"
-            Visibility="Hidden"
-            >
-        </Image>
+            Visibility="Visible"
+            />
 
         <Image
-            Name="SelectionTable2" 
-            Grid.Row="1"
+            Name="SelectionTable2"
             Source="/AGS_Tim;component/Resources/Rahmen.PNG"
-            Margin="882,219.8,244,301"
+            Margin="882,220,244,329"
             Stretch="Fill"
-            Visibility="Hidden"
-            >
-        </Image>
+            Visibility="Visible"
+            />
 
         <Image
             Name="SelectionTable3" 
             Grid.Row="1"
             Source="/AGS_Tim;component/Resources/Rahmen.PNG"
-            Margin="1087,222.8,39,298"
+            Margin="1087,220,39,329"
             Stretch="Fill"
-            Visibility="Hidden"
+            Visibility="Visible"
             >
         </Image>
 
         <Image
-            Name="SelectionTable4" 
-            Grid.Row="1"
+            Name="SelectionTable4"
             Source="/AGS_Tim;component/Resources/Rahmen.PNG"
-            Margin="667,391,459,125"
+            Margin="667,391,459,157"
             Stretch="Fill"
-            Visibility="Hidden"
-            >
-        </Image>
+            Visibility="Visible"
+            />
 
         <Image
             Name="SelectionTable5" 
             Grid.Row="1"
             Source="/AGS_Tim;component/Resources/Rahmen.PNG"
-            Margin="882,390.8,244,125"
+            Margin="882,391,244,157"
             Stretch="Fill"
-            Visibility="Hidden"
+            Visibility="Visible"
             >
         </Image>
 
@@ -126,9 +120,9 @@
             Name="SelectionTable6" 
             Grid.Row="1"
             Source="/AGS_Tim;component/Resources/Rahmen.PNG"
-            Margin="1087,390.8,39,125"
+            Margin="1087,391,39,157"
             Stretch="Fill"
-            Visibility="Hidden"
+            Visibility="Visible"
             >
         </Image>
 
@@ -140,7 +134,7 @@
             Stretch="Fill"
             Visibility="Hidden"
             Panel.ZIndex="100"/>
-        
+
 
         <Image
             Name="MedalTable2"
