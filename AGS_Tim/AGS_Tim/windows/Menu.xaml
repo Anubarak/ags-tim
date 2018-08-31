@@ -80,7 +80,8 @@
                 BorderBrush="Black"
                 FontSize="22"
                 Content="Einstellungen"
-                Width="250">
+                Width="250"
+                IsEnabled="False">
             </Button>
             <Separator
                 Background="Transparent"
@@ -116,14 +117,13 @@
             Margin="521,475,741,189"/>
 
         <TextBlock
-            Foreground="Black"
+            Foreground="Gray"
             Background="Transparent"
             HorizontalAlignment="Center"
             Text="3"
             FontSize="25"
             FontWeight="Bold"
-            Margin="521,520,741,144"
-            Visibility="Hidden"/>
+            Margin="521,520,741,144"/>
 
         <TextBlock
             HorizontalAlignment="Center"
